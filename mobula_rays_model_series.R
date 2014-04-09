@@ -4,14 +4,14 @@
 ## Created by Easton R. WHite
 ## Last edited: 9-Apr-2014
 
-## call in data
+## call in data set
 CocosData=read.table('CocosData_19305_dpts.txt',header=T)
 
 ## load packages
 require(fields)
 require(numDeriv)
 
-## run hurdle model R script
+## run hurdle model R script from Eva
 source("ExtraZeroCodeForJulia_edited.R")
 
 ## run hurdle model form Cantoni et al (2014)
@@ -27,7 +27,7 @@ species.hat <- c(MobulaRaysHM$alphahat, MobulaRaysHM$betahat, MobulaRaysHM$gamma
 clusternumberspecies<-length(unique(CLUSTERspecies))
 clustersizespecies<-lapply(split(CLUSTERspecies,CLUSTERspecies),'length')
 
-
+#return standard errors for each parameter
 speciesHM$hess <- hessian(func=approxloglik,x=c(speciesHM$alphahat,speciesHM$betahat,speciesHM$gammahat,speciesHM$sigmauhat,speciesHM$sigmavhat),
 	XX=Xspecies,ZZ=Zspecies,yy=yspscies$species,clusternb=clusternumberspecies,clustersz=clustersizespecies,cluster=CLUSTERspecies,uu=speciesHM$u.ll,vv=speciesHM$v.ll)
 species.SE <- sqrt(diag(solve(speciesHM$hess)))
