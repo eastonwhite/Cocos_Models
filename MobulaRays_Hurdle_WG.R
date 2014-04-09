@@ -1,5 +1,6 @@
 #!/bin/env Rscript
 
+## this script imports Cocos data and runs a hurdle models according to Cantoni 2014
 CocosData=read.table('/home/erwhite1/data/CocosData_19305_dpts.txt',header=T)
 
 require(fields)
