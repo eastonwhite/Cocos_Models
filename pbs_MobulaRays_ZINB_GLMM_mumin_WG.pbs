@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Specifies the name of the job
+#PBS -N MobulaRays_ZINB_GLMM_mumin_WG
+#PBS -l walltime=12:00:00
+# Specifies the max running time
+#PBS -l procs=1
+# Specifies the number of cores/threads/processes to use. If procs=N, then the
+# scheduler will give you N cores on (maybe) different nodes.
+##PBS -l nodes=1:ppn=1
+# Specifies the number of cores/threads/processes to use. If nodes=1:ppn=N, then the
+# scheduler will give you N cores on a single node (a stringent constraint).
+#PBS  -l mem=3gb
+# Specifies the memory.
+#PBS -j oe
+# specify where to send notifications
+#PBS -M erwhite1@uvic.ca
+# specify what type of notifications to send
+#PBS -m bea
+# Combines the error and the standard output to the same file named:
+# jobName.oJobID.
+
+module load R/3.0.2
+cd $PBS_O_WORKDIR
+
+#Preprocessing ...
+echo "MobulaRays_ZINB_GLMM_mumin_WG.R on `hostname` at `date`"
+./MobulaRays_ZINB_GLMM_mumin_WG.R >& log_${PBS_JOBID}.txt
+echo "MobulaRays_ZINB_GLMM_mumin_WG.R with exit status $? at `date`"
+#Post processing ...
+
+
