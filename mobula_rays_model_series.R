@@ -7,6 +7,7 @@
 ## call in data set
 CocosData=read.table('CocosData_19305_dpts.txt',header=T)
 
+#added comments
 ## load packages
 require(fields)
 require(numDeriv)
