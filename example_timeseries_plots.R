@@ -1,3 +1,9 @@
+#This script creates a rough example of what the time series plot should look like in the final picture. The correct data and models have not been included in this script
+#Created by Easton R. White
+#Last edited 11-Apr-2014
+
+#the code has not been commented on for clarity or understanding yet
+
 pdf(file='exampletimeseries.pdf',height=5,width=8)
 
 par(mfrow=c(3,4))
