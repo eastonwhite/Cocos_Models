@@ -8,7 +8,7 @@ source("/home/erwhite1/data/hurdlemodels/ExtraZeroCodeForJulia_edited.R")
 
 Xspecies <- model.matrix(~StudyYear + ElNinoIndex + CurrentCode +SeaTempF + VisibilityFt + SIN_TIME + COS_TIME, data=CocosData)
 Zspecies <- model.matrix(~StudyYear + ElNinoIndex + CurrentCode +SeaTempF + VisibilityFt + SIN_TIME + COS_TIME, data=CocosData)
-yspecies <- CocosData$EagleRays
+yspecies <- CocosData$MobulaRays
 CLUSTERspecies <- as.factor(CocosData$SiteCode)
 
 
