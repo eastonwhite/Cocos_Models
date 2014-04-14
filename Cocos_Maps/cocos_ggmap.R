@@ -1,16 +1,22 @@
-library(maps)
-library(mapdata)
-library(plotrix)
-library(mapproj)
-library(grid)
+#this script creates different maps (size, color, zoom) of Cocos Islands, Costa Rica
+#Created by Easton R. White
+#Last edited 10-Apr-2014
 
-library(ggmap)
+#This code has not yet been edited for clarity
 
+require(maps)
+require(mapdata)
+require(plotrix)
+require(mapproj)
+require(grid)
 
+require(ggmap)
+
+#pull in map of Cocos from google maps
 pngMAP_df<- get_map(location = c(lon = -87.07, lat = 5.52),source = "google", zoom = 13,color='bw')
-p<-ggmap(pngMAP_df)
+CocosMap<-ggmap(pngMAP_df)
 
-
+#change colors of map
 attr_pngMAP_df <- attr(pngMAP_df, "bb")
 pngMAP_df[pngMAP_df=='#EAEAEA']='white'
 pngMAP_df[pngMAP_df=='#AEAEAE']='grey'
@@ -23,36 +29,35 @@ pngMAP_df[pngMAP_df!='#AEAEAE']='white'
 class(pngMAP_df) <- c("ggmap", "raster")
 attr(pngMAP_df, "bb") <- attr_pngMAP_df
 
-p<-ggmap(pngMAP_df) + labs(x = 'Longitude', y = 'Latitude')
+CocosMap<-ggmap(pngMAP_df) + labs(x = 'Longitude', y = 'Latitude')
 
+
+#add data points to Cocos map
 d <- data.frame(lat=c(5.5,5.55),
-                lon=c(-87.075,-87.050))
-                
-p<- p + geom_point(data=d, aes(x=lon, y=lat), color="black", size=2)      
+                lon=c(-87.075,-87.050))                
+CocosMap<- CocosMap + geom_point(data=d, aes(x=lon, y=lat), color="black", size=2)      
 
 
-
+#create world map with worldHires data set
 map("worldHires", xlim=c(-130,-40), ylim=c(-40,50), fill=TRUE, col="white")
 rect(-87.125, 5.475, -87.025, 5.575, border="black")
 
-#pngMAP_df<- get_map(location = 'cocos island, costa rica', 
-                    source = "google", zoom = 13,color='bw')
-dude=p
+#plot CocosMap as an inset
 vpa_ <- viewport(width = 0.5, height = 0.5, x = 0.22, y = 0.25)
-print(dude,vp=vpa_)
+print(CocosMap,vp=vpa_)
 
 segments(-95,1,-87.025,5.575,lty=2)
 segments(-95,-44,-87.025,5.475,lty=2)
 #########################################
 
-#draw large map, with cocos inset and scale bar
+#draw large map, with cocos inset and scale bar (must run next block of code first for scale bar to work)
 map("worldHires", xlim=c(-160,-50), ylim=c(-40,40), fill=TRUE, col="white")
 points(mean(c(-87.125,-87.025)),mean(c(5.475,5.575)),pch=8,cex=0.6)
 text(-91,5.5,'Cocos',cex=0.6)
-p=p+scaleBar(lon=-87.070,lat=5.475,distanceLon=2,distanceLat=0.4,distanceLegend=0.8,dist.unit='km',orientation=FALSE)
+CocosMap=CocosMap+scaleBar(lon=-87.070,lat=5.475,distanceLon=2,distanceLat=0.4,distanceLegend=0.8,dist.unit='km',orientation=FALSE)
 
 vpa_ <- viewport(width = 0.73, height = 0.73, x = 0.28, y = 0.34)
-print(dude,vp=vpa_)
+print(CocosMap,vp=vpa_)
 
 
 ########################
