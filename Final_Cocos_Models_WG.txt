@@ -1,9 +1,11 @@
 #!/bin/env Rscript
 
 
-## Run all final Cocos models (One model type for each of the six main species
+## Run all final Cocos models (One model type for each of the six main species). Each block returns .Rdata file of MuMIn model results
 ## Created by Easton R. White
 ## Created 22-Apr-2014
+
+## I still need to convert explanatory variables to metric system
 
 ## required packages
 require(glmmADMB)
@@ -72,11 +74,17 @@ save(MantaRays_ZINB_GLMM_mumin,file='MantaRays_ZINB_GLMM_mumin.Rdata')
 
 
 #########################################################################################################
-## MobulaRays (Zero-inflated GLMM with negative binomial error function)
-MobulaRays_ZINB_GLMM_full_model <- glmmadmb(formula=MobulaRays~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+## MobulaRays (GLMM with binomial error function)
+MobulaRays_ZINB_GLMM_full_model <- glmmadmb(formula=MobulaRays~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="binomial",zeroInflation=FALSE)
 MobulaRays_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
 #subset(MobulaRays_ZINB_GLMM_mumin,delta<5)
 #model.avg(MobulaRays_ZINB_GLMM_mumin, delta<2)
 #summary(get.models(MobulaRays_ZINB_GLMM_mumin,1)[[1]])
 
 save(MobulaRays_ZINB_GLMM_mumin,file='MobulaRays_ZINB_GLMM_mumin.Rdata')
+
+
+
+#########################################################################################################
+## Add other species here ##
+#########################################################################################################
