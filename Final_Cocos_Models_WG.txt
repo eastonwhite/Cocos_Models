@@ -18,8 +18,8 @@ CocosData=read.table('/home/erwhite1/data/CocosData_19305_dpts.txt',header=T)
 #########################################################################################################
 ## Run models for each species
 
-## Hammerheads (Zero-inflated GLMM with negative binomial error function)
-Hammerhead_ZINB_GLMM_full_model <- glmmadmb(formula=Hammerhead~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+## Hammerheads (GLMM with negative binomial error function)
+Hammerhead_ZINB_GLMM_full_model <- glmmadmb(formula=Hammerhead~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=FALSE)
 Hammerhead_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
 #subset(Hammerhead_ZINB_GLMM_mumin,delta<5)
 #model.avg(Hammerhead_ZINB_GLMM_mumin, delta<2)
@@ -28,8 +28,8 @@ Hammerhead_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIM
 save(Hammerhead_ZINB_GLMM_mumin,file='Hammerhead_ZINB_GLMM_mumin.Rdata')
 
 #########################################################################################################
-## Whitetips (Zero-inflated GLMM with negative binomial error function)
-Whitetips_ZINB_GLMM_full_model <- glmmadmb(formula=Whitetips~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+## Whitetips (GLMM with negative binomial error function)
+Whitetips_ZINB_GLMM_full_model <- glmmadmb(formula=Whitetips~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=FALSE)
 Whitetips_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
 #subset(Whitetips_ZINB_GLMM_mumin,delta<5)
 #model.avg(Whitetips_ZINB_GLMM_mumin, delta<2)
@@ -38,11 +38,45 @@ Whitetips_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME
 save(Whitetips_ZINB_GLMM_mumin,file='Whitetips_ZINB_GLMM_mumin.Rdata')
 
 #########################################################################################################
-## MarbleRays (Zero-inflated GLMM with negative binomial error function)
-MarbleRays_ZINB_GLMM_full_model <- glmmadmb(formula=MarbleRays~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+## MarbleRays (GLMM with negative binomial error function)
+MarbleRays_ZINB_GLMM_full_model <- glmmadmb(formula=MarbleRays~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=FALSE)
 MarbleRays_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
 #subset(MarbleRays_ZINB_GLMM_mumin,delta<5)
 #model.avg(MarbleRays_ZINB_GLMM_mumin, delta<2)
 #summary(get.models(MarbleRays_ZINB_GLMM_mumin,1)[[1]])
 
 save(MarbleRays_ZINB_GLMM_mumin,file='MarbleRays_ZINB_GLMM_mumin.Rdata')
+
+
+#########################################################################################################
+## EagleRays (Zero-inflated GLMM with negative binomial error function)
+EagleRays_ZINB_GLMM_full_model <- glmmadmb(formula=EagleRays~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+EagleRays_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
+#subset(EagleRays_ZINB_GLMM_mumin,delta<5)
+#model.avg(EagleRays_ZINB_GLMM_mumin, delta<2)
+#summary(get.models(EagleRays_ZINB_GLMM_mumin,1)[[1]])
+
+save(EagleRays_ZINB_GLMM_mumin,file='EagleRays_ZINB_GLMM_mumin.Rdata')
+
+
+#########################################################################################################
+## MantaRays (Zero-inflated GLMM with negative binomial error function)
+MantaRays_ZINB_GLMM_full_model <- glmmadmb(formula=MantaRays~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+MantaRays_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
+#subset(MantaRays_ZINB_GLMM_mumin,delta<5)
+#model.avg(MantaRays_ZINB_GLMM_mumin, delta<2)
+#summary(get.models(MantaRays_ZINB_GLMM_mumin,1)[[1]])
+
+save(MantaRays_ZINB_GLMM_mumin,file='MantaRays_ZINB_GLMM_mumin.Rdata')
+
+
+
+#########################################################################################################
+## MobulaRays (Zero-inflated GLMM with negative binomial error function)
+MobulaRays_ZINB_GLMM_full_model <- glmmadmb(formula=MobulaRays~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+MobulaRays_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
+#subset(MobulaRays_ZINB_GLMM_mumin,delta<5)
+#model.avg(MobulaRays_ZINB_GLMM_mumin, delta<2)
+#summary(get.models(MobulaRays_ZINB_GLMM_mumin,1)[[1]])
+
+save(MobulaRays_ZINB_GLMM_mumin,file='MobulaRays_ZINB_GLMM_mumin.Rdata')
