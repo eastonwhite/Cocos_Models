@@ -4,3 +4,25 @@
 ## Run all final Cocos models (One model type for each of the six main species
 ## Created by Easton R. White
 ## Created 22-Apr-2014
+
+## required packages
+require(glmmADMB)
+require(ggplot2)
+require(MuMIn)
+require(MASS)
+
+
+## Call in data
+CocosData=read.table('/home/erwhite1/data/CocosData_19305_dpts.txt',header=T)
+
+
+## Run models for each species
+
+## Hammerheads
+Hammerhead_ZINB_GLMM_full_model <- glmmadmb(formula=Hammerhead~StudyYear+CurrentCode+SeaTempF+VisibilityFt+ElNinoIndex+SIN_TIME+COS_TIME+(1|DiverCode)+(1|SiteCode),data=na.omit(cocos),family="nbinom",zeroInflation=TRUE)
+Hammerhead_ZINB_GLMM_mumin <- dredge(ZINB,rank="AIC",subset=(COS_TIME | !SIN_TIME) && (!COS_TIME | SIN_TIME))
+#subset(Hammerhead_ZINB_GLMM_mumin,delta<5)
+#model.avg(Hammerhead_ZINB_GLMM_mumin, delta<2)
+#summary(get.models(Hammerhead_ZINB_GLMM_mumin,1)[[1]])
+
+save(Hammerhead_ZINB_GLMM_mumin,file='Hammerhead_ZINB_GLMM_mumin.Rdata')
