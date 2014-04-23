@@ -2,6 +2,7 @@
 
 
 ## Run all final Cocos models (One model type for each of the six main species). Each block returns .Rdata file of MuMIn model results
+## Paper accompanying these models will be made available in May 2014
 ## Created by Easton R. White
 ## Created 22-Apr-2014
 
@@ -86,5 +87,5 @@ save(MobulaRays_ZINB_GLMM_mumin,file='MobulaRays_ZINB_GLMM_mumin.Rdata')
 
 
 #########################################################################################################
-## Add other species here ##
+## Add other species here- all are GLMMs with binomial error functions (logistic models) ##
 #########################################################################################################
