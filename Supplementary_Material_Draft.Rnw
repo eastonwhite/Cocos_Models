@@ -1,0 +1,170 @@
+
+%this code produces a pdf of a series of tables and plots relating to model outputs from glmulti for subsets of the data
+%Created by Easton R. White
+%Last edited 19-Feb-2014
+
+\documentclass[a4paper]{article}
+
+
+\usepackage{graphicx, verbatim}
+\usepackage{rotating}
+\usepackage[margin=0.5in]{geometry}
+
+\begin{document}
+
+\begin{center}
+\textbf{Supplementary Material}
+\bigskip
+\end{center}
+
+\textbf{Title}: Shift in elasmobranch community assemblage at a marine protected island
+\bigskip
+
+\textbf{Authors}: Easton R. White, Mark Myers, Joanna Mills-Flemming, and Julia K. Baum
+\bigskip
+
+\textbf{Document information}
+All possible co
+\pagebreak
+
+
+%stuff here to seperate commands that follow###########
+
+\pagebreak
+
+
+
+
+\section{Dive effort}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<<echo=FALSE,floating=FALSE>>=
+
+#pull in data
+main=read.csv('FINAL_COMPLETE_main_species_data_EW.csv',header=T,sep=',')
+cocos=subset(main,main$IslandCode==1)
+cocos=cocos[,1:38]
+
+#remove nightime data- if I remove the night dives, it will remove the first 5 years of data because all the records for TimeCode in the first 5 years are NA
+#cocos=subset(cocos,cocos$TimeCode<4)
+#remove miscellaneous dive sites
+cocos=subset(cocos,cocos$SiteCode<119)
+#subset part of years
+#cocos=subset(cocos,cocos$StudyYear<10)
+#remove misc and unknown divemasters from data set
+cocos=subset(cocos,cocos$DiverCode<40)
+
+cocos$SeaCondCode[cocos$SeaCondCode>3]=3
+cocos$CurrentCode[cocos$CurrentCode>3]=3
+#set factor variables to factors
+cocos$SiteCode <- as.factor(cocos$SiteCode)
+cocos$TimeCode <- as.factor(cocos$TimeCode)
+cocos$WeatherCode <- as.factor(cocos$WeatherCode)
+cocos$CurrentCode <- as.factor(cocos$CurrentCode)
+cocos$SeaCondCode <- as.factor(cocos$SeaCondCode)
+cocos$DiverCode <- as.factor(cocos$DiverCode)
+cocos$JackCode <- as.factor(cocos$JackCode)
+
+cocos$StudyYear<-as.numeric(cocos$StudyYear)
+cocos$Month<-as.numeric(cocos$Month)
+cocos$StudyMonth<-as.numeric(cocos$StudyMonth)
+cocos=na.omit(cocos[,c(3,7,8,17,19,20,23,12,22,25:32)])
+
+#define seasonality terms
+cocos$SIN_TIME=sin(2*pi*cocos$StudyJulianDate/365.25)
+cocos$COS_TIME=cos(2*pi*cocos$StudyJulianDate/365.25)
+
+@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%plot dives per year
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=6,floating=FALSE >>=
+
+dives_per_year=data.frame(table(cocos$StudyYear))
+dives_per_year$Var1=1992:2013
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)')
+@	
+\caption{Number of dives recorded per year}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=6,floating=FALSE >>=
+	
+	dives_per_site=table(cocos$SiteCode,cocos$StudyYear)
+	rownames(dives_per_site)=101:118
+	colnames(dives_per_site)=1992:2013
+	
+	plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')
+	for (j in 2:nrow(dives_per_site)){
+		points(colnames(dives_per_site),dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')
+	}
+@	
+\caption{Fraction of dives recorded at each site for each year. Each line represents a different site. }
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%include table of number of dives at each site over time
+<<xtable1, results=tex,echo=FALSE,floating=FALSE>>=
+	require(xtable)
+	xtab1<-xtable(dives_per_site, caption="Number of dives at each site during each year", label="table1")
+	print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%include table of number of dives at each site over time
+<<xtable1, results=tex,echo=FALSE,floating=FALSE>>=
+	require(xtable)
+	dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
+	xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)
+	xtab1=t(xtab1)
+	xtab1=xtable(xtab1,caption="Fraction of dives at each site for each diver", label="table1",digits=2)
+	print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!',size="\\small")
+@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%include table of number of dives at each site over time
+<<xtable1, results=tex,echo=FALSE,floating=FALSE>>=
+	require(xtable)
+	dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
+	rownames(dives_per_diver_year)=1:39
+	colnames(dives_per_diver_year)=1992:2013
+
+	xtab1<-xtable(dives_per_diver_year, caption="Number of dives recorded by each diver in each year", label="table1")
+	print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',size="\\small",table.placement='h!')
+@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=6 ,floating=FALSE>>=
+	dives_per_diver_year[dives_per_diver_year>0]=1
+	dives_per_diver_year[dives_per_diver_year==0]=0
+	
+	plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40),pch=16)
+	
+	for (z in 1:nrow(dives_per_diver_year)){
+		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40),pch=16)
+	}
+	
+	 axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+	 abline(h=2:40)
+	axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=1,hadj=0.8)
+
+	
+@	
+\caption{Solid circle indicates the divemaster recorded data in that year}
+\end{figure}
+
+
+
+\end{document}
