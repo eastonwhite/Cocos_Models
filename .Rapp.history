@@ -1,0 +1,357 @@
+time=300#
+#
+gamma=0.12#
+alpha=0.002#
+mu=0.15#
+R=2-0.2#
+K=750#
+#
+Prey=numeric(time)#
+Pred=numeric(time)#
+#
+Prey[1]=500#
+Pred[1]=10#
+#
+for (t in 1:time){#
+	Prey[t+1]= Prey[t] + R*Prey[t]*(1- Prey[t]/K) - alpha*Prey[t]*Pred[t]#
+	Pred[t+1]= Pred[t] + gamma*(alpha*Prey[t]*Pred[t]) - mu*Pred[t]#
+}
+plot(Prey,type='b')
+quartz()
+plot(Pred,type='b',col='red')
+time=300#
+#
+gamma=0.12#
+alpha=0.002#
+mu=0.25#
+R=2-0.2#
+K=750#
+#
+Prey=numeric(time)#
+Pred=numeric(time)#
+#
+Prey[1]=500#
+Pred[1]=10#
+#
+for (t in 1:time){#
+	Prey[t+1]= Prey[t] + R*Prey[t]*(1- Prey[t]/K) - alpha*Prey[t]*Pred[t]#
+	Pred[t+1]= Pred[t] + gamma*(alpha*Prey[t]*Pred[t]) - mu*Pred[t]#
+}
+plot(Prey,type='b')
+plot(Pred,col='red',type='b')
+require(grDevices) # for colours#
+filled.contour(volcano, color = terrain.colors, asp = 1) # simple
+(14743-15463)/15463
+sqrt(0.139)
+exp(-0.03089*21)
+-0.030888979 + (1.96*0.008124077)
+-0.030888979 - (1.96*0.008124077)
+exp(-0.04681217*21)
+exp(-0.01496579*21)
+exp(-0.08000*21)
+main=read.csv('FINAL_COMPLETE_main_species_data_EW.csv',header=T,sep=',')#
+cocos=subset(main,main$IslandCode==1)#
+cocos=cocos[,1:38]#
+#
+#remove nightime data- if I remove the night dives, it will remove the first 5 years of data because all the records for TimeCode in the first 5 years are NA#
+#cocos=subset(cocos,cocos$TimeCode<4)#
+#remove miscellaneous dive sites#
+cocos=subset(cocos,cocos$SiteCode<119)#
+#subset part of years#
+#cocos=subset(cocos,cocos$StudyYear<10)#
+#remove misc and unknown divemasters from data set#
+cocos=subset(cocos,cocos$DiverCode<40)#
+#
+cocos$SeaCondCode[cocos$SeaCondCode>3]=3#
+cocos$CurrentCode[cocos$CurrentCode>3]=3#
+#set factor variables to factors#
+cocos$SiteCode <- as.factor(cocos$SiteCode)#
+cocos$TimeCode <- as.factor(cocos$TimeCode)#
+cocos$WeatherCode <- as.factor(cocos$WeatherCode)#
+cocos$CurrentCode <- as.factor(cocos$CurrentCode)#
+cocos$SeaCondCode <- as.factor(cocos$SeaCondCode)#
+cocos$DiverCode <- as.factor(cocos$DiverCode)#
+cocos$JackCode <- as.factor(cocos$JackCode)#
+#
+cocos$StudyYear<-as.numeric(cocos$StudyYear)#
+cocos$Month<-as.numeric(cocos$Month)#
+cocos$StudyMonth<-as.numeric(cocos$StudyMonth)#
+cocos=na.omit(cocos[,c(3,7,8,17,19,20,23,12,22,25:32)])#
+#
+#define seasonality terms#
+cocos$SIN_TIME=sin(2*pi*cocos$StudyJulianDate/365.25)#
+cocos$COS_TIME=cos(2*pi*cocos$StudyJulianDate/365.25)
+head(cocos)
+names(cocos)
+for (j in 1:nrow(cocos)){#
+	if (cocos[j,10:15]>0){#
+		cocos[j,10:15]#
+	}#
+	cocos$number_species[j]=sum(cocos[j,10:15])#
+}
+j
+head(cocos)
+species=cocos[,10:15]
+head(species)
+species[species>0]=1
+head(species)
+cocos[,10:15]=species
+head(cocos)
+for (j in 1:nrow(cocos)){#
+	cocos$number_species[j]=sum(cocos[j,10:15])#
+}
+head(cocos)
+aggregate(cocos$number_species, by=list(StudyYear),FUN=mean)
+aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean)
+plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean))
+plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean),ylim=c(0,6))
+plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=sd))
+plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean),ylim=c(0,6))
+Sweave(Supplementary_Material_Draft.Rnw)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+head(cocos)
+aggregate(cocos$StudyYear,by=list(cocos$StudyYear),FUN=mean)
+table(cocos$StudyYear)
+data.frame(table(cocos$StudyYear))
+Var1=1992:2013
+dives_per_year$Var1=1992:2013
+dives_per_year=data.frame(table(cocos$StudyYear))
+dives_per_year$Var1=1992:2013
+dives_per_year
+plot(dives_per_year)
+barplot(dives_per_year)
+barplot(dives_per_year$Var1,dives_per_year$Freq)
+barplot(dives_per_year$Freq)
+barplot(dives_per_year$Freq~dives_per_year$Var1)
+plot(dives_per_year$Var1,dives_per_year$Freq)
+help(plot)
+plot(dives_per_year$Var1,dives_per_year$Freq,type='h')
+barplot(dives_per_year$Var1,dives_per_year$Freq,type='h')
+barplot(dives_per_year$Freq)
+help(barplot)
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1)
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2)
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year')
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)')
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2500))
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2300))
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2400))
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2500))
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2000))
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)'
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)')
+barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)')
+head(cocos)
+table(cocos$SiteCode)
+table(cocos$SiteCode,cocos$StudyYear)
+data.frame(table(cocos$SiteCode,cocos$StudyYear))
+plot(table(cocos$SiteCode,cocos$StudyYear))
+table(cocos$SiteCode,cocos$StudyYear)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+table(cocos$SiteCode,cocos$StudyYear)
+dives_per_site=table(cocos$SiteCode,cocos$StudyYear)
+names(dives_per_site)=1992:2013
+dives_per_site
+row.names(dives_per_site)=101:118
+row.names(dives_per_site)=brown
+row.names(dives_per_site)='brown'
+row.names(dives_per_site)=rep('brown',times=18)
+dives_per_site
+colnames(dives_per_site)=1992:2013
+colnames(dives_per_site)=1992:2013
+dives_per_site
+dives_per_site=table(cocos$SiteCode,cocos$StudyYear)#
+rownames(dives_per_site)=101:118#
+colnames(dives_per_site)=1992:2013
+dives_per_site
+plot(dives_per_site[1,])
+plot(dives_per_site[1,]/dives_per_year$Freq)
+plot(dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,1),col=1)
+plot(dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,1),col=1,type='l')
+for (j in 2:nrow(dives_per_site)){#
+	points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,1),col=j,type='l')#
+}
+plot(dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l')#
+for (j in 2:nrow(dives_per_site)){#
+	points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')#
+}
+plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')
+for (j in 2:nrow(dives_per_site)){
+points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')
+}
+plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')#
+for (j in 2:nrow(dives_per_site)){#
+	points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')#
+}
+plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')#
+for (j in 2:nrow(dives_per_site)){#
+	points(colnames(dives_per_site),dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')#
+}
+xtab1<-xtable(dives_per_site, caption="Number of dives at each site during each year",  label="table1")
+require(xtable)
+xtab1<-xtable(dives_per_site, caption="Number of dives at each site during each year",  label="table1")
+print(xtab1,include.rownames = TRUE)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+table(cocos$SiteCode,cocos$DiverCode)
+table(cocos$SiteCode,cocos$DiverCode)
+dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
+dives_per_site_diver=table(cocos$DiverCode)
+dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
+table(cocos$DiverCode)
+rep(table(cocos$DiverCode),times=18)
+table(cocos$DiverCode)
+dives_per_site_diver/table(cocos$DiverCode)
+dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode))
+rbind(table(cocos$DiverCode),table(cocos$DiverCode))
+dives_per_site_diver/rbind(rep(table(cocos$DiverCode),times=18))
+rbind(rep(table(cocos$DiverCode),times=18))
+dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode))
+rbind(table(cocos$DiverCode),table(cocos$DiverCode))
+rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode))
+dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode))
+xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=3)
+print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)
+print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+table(cocos$DiverCode,cocos$StudyYear)
+dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
+rownames(dives_per_diver_year=)=101:118
+dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
+rownames(dives_per_diver_year)=101:118
+dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
+rownames(dives_per_diver_year)=1:39
+colnames(dives_per_diver_year)=1992:2013
+dives_per_diver_year
+dives_per_diver_year[dives_per_diver_year>0]=1
+dives_per_diver_year
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,])
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,])
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Shark ID #',xlab='Time (year)',las = 1)
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='divemaster ID,xlab='Time (year)',las = 1,ylim=0,40)
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='divemaster ID,xlab='Time (year)',las = 1,ylim=c(0,40))
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
+dives_per_diver_year[dives_per_diver_year==0]='NA'
+dives_per_diver_year
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
+for (z in 1:nrow(dives_per_diver_year)){#
+		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+z),ylim=c(0,40))#
+	}
+z
+dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
+rownames(dives_per_diver_year)=1:39
+colnames(dives_per_diver_year)=1992:2013
+dives_per_diver_year[dives_per_diver_year>0]=1
+dives_per_diver_year[dives_per_diver_year==0]=0
+dives_per_diver_year
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
+for (z in 1:nrow(dives_per_diver_year)){
+points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+z),ylim=c(0,40))
+}
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
+for (z in 1:nrow(dives_per_diver_year)){
+points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]*dives_per_diver_year[z,]+z),ylim=c(0,40))
+}
+dives_per_diver_year[z,]*dives_per_diver_year[z,]+z
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
+dives_per_diver_year[z,]
+dives_per_diver_year[z,]*dives_per_diver_year[z,]
+dives_per_diver_year[z,]+dives_per_diver_year[z,]*z
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))#
+	for (z in 1:nrow(dives_per_diver_year)){#
+		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(0,40))#
+	}
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(1,40))
+for (z in 1:nrow(dives_per_diver_year)){
+points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))
+}
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40))
+for (z in 1:nrow(dives_per_diver_year)){
+points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))
+}
+axis(2, at=1:nrow(dives_per_diver_year), labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.40,hadj=0.2)
+axis(2, at=1:nrow(dives_per_diver_year), labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+axis(2, at=1:nrow(dives_per_diver_year)+0.5, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+axis(2, at=1:nrow(dives_per_diver_year)+2, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40))#
+	for (z in 1:nrow(dives_per_diver_year)){#
+		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))#
+	}#
+	 axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+abline(h=1)
+abline(h=1+1)
+abline(h=2:40)
+axis(1, at=ticks.at, labels=1992:2013, tick=T,las=2,cex.axis=0.60,hadj=0.8)
+axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=0.60,hadj=0.8)
+axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=1,hadj=0.8)
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40))#
+	for (z in 1:nrow(dives_per_diver_year)){#
+		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))#
+	}#
+	 axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)#
+	 abline(h=2:40)#
+	axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=1,hadj=0.8)
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40),pch=16)
+points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40),pch=16)
+plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40),pch=16)#
+	for (z in 1:nrow(dives_per_diver_year)){#
+		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40),pch=16)#
+	}#
+	 axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)#
+	 abline(h=2:40)#
+	axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=1,hadj=0.8)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
+dives_per_site_diver
+t(dives_per_site_diver)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+print(t(dives_per_site_diver),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+print(t(dives_per_site_diver),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
+xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)
+print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+print(t(xtab1),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)
+print(xtab1)
+print(t(xtab1),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+print(t(xtab1,digits=2),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+t(xtab1)
+xtab1
+xtab1
+t(xtab1)
+xtable(t(xtab1))
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
