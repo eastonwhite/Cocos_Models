@@ -17,7 +17,7 @@
 \bigskip
 \end{center}
 
-\textbf{Title}: Shift in elasmobranch community assemblage at a marine protected island
+\textbf{Title}: Shifting elasmobranch community assemblage at an isolated marine protected area
 \bigskip
 
 \textbf{Authors}: Easton R. White, Mark Myers, Joanna Mills-Flemming, and Julia K. Baum
@@ -164,6 +164,432 @@ barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per 
 @	
 \caption{Solid circle indicates the divemaster recorded data in that year}
 \end{figure}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%% SPECIES INFORMATION %%%%%%%%%%%%%
+
+
+\section{Species information}
+
+
+%include basic species information table
+<<xtable1, results=tex,echo=FALSE,floating=FALSE>>=
+	species_data=matrix(0,nrow=31,ncol=8, dimnames=list(1:31, c('NAME','#RECORDS','MEAN','MEDIAN','VAR','NAs','ZEROS','FRAC_NOT_ZERO')))
+
+	for (j in 10:15){
+		species_data[j,1]=names(cocos[j])
+		species_data[j,2]=length(na.omit(cocos[,j]))
+		species_data[j,3]=round(mean(cocos[,j],na.rm=T),digits=2)
+		species_data[j,4]=median(cocos[,j],na.rm=T)
+		species_data[j,5]=round(var(cocos[,j],na.rm=T),digits=2)
+		species_data[j,6]=sum(is.na(cocos[,j]))
+		species_data[j,7]=sum(cocos[,j]==0,na.rm=T)
+		species_data[j,8]=round(sum(cocos[,j]>0, na.rm=T)/length(na.omit(cocos[,j])) ,digits=2)
+	}
+
+	species_data=species_data[10:15,]
+
+
+	species_info<-xtable(species_data, caption="Species specific record information", label="species_info")
+	print(species_info,include.rownames = FALSE,floating.environment='table',table.placement='h!')
+@
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=3,floating=FALSE >>=
+
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	j=10
+	if (max(cocos[,j],na.rm=T)>100){
+		breaks_at=10
+	}else{
+		breaks_at=1	
+	}
+
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))
+
+    	#histogram of all data
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')
+        mtext("All data",cex=0.75,line=-1)
+    
+    
+    	#histogram of all data
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros removed",cex=0.75,line=-1)
+    
+
+    	#histogram of all data
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)
+
+
+
+		mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)
+		mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)
+
+
+@	
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=3,floating=FALSE >>=
+
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	j=11
+	if (max(cocos[,j],na.rm=T)>100){
+		breaks_at=10
+	}else{
+		breaks_at=1	
+	}
+
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))
+
+    	#histogram of all data
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')
+        mtext("All data",cex=0.75,line=-1)
+    
+    
+    	#histogram of all data
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros removed",cex=0.75,line=-1)
+    
+
+    	#histogram of all data
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)
+
+
+
+		mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)
+		mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)
+
+
+@	
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=3,floating=FALSE >>=
+
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	j=12
+	if (max(cocos[,j],na.rm=T)>100){
+		breaks_at=10
+	}else{
+		breaks_at=1	
+	}
+
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))
+
+    	#histogram of all data
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')
+        mtext("All data",cex=0.75,line=-1)
+    
+    
+    	#histogram of all data
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros removed",cex=0.75,line=-1)
+    
+
+    	#histogram of all data
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)
+
+
+
+		mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)
+		mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)
+
+
+@	
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=3,floating=FALSE >>=
+
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	j=13
+	if (max(cocos[,j],na.rm=T)>100){
+		breaks_at=10
+	}else{
+		breaks_at=1	
+	}
+
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))
+
+    	#histogram of all data
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')
+        mtext("All data",cex=0.75,line=-1)
+    
+    
+    	#histogram of all data
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros removed",cex=0.75,line=-1)
+    
+
+    	#histogram of all data
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)
+
+
+
+		mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)
+		mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)
+
+
+@	
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=3,floating=FALSE >>=
+
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	j=14
+	if (max(cocos[,j],na.rm=T)>100){
+		breaks_at=10
+	}else{
+		breaks_at=1	
+	}
+
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))
+
+    	#histogram of all data
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')
+        mtext("All data",cex=0.75,line=-1)
+    
+    
+    	#histogram of all data
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros removed",cex=0.75,line=-1)
+    
+
+    	#histogram of all data
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)
+
+
+
+		mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)
+		mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)
+
+
+@	
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=3,floating=FALSE >>=
+
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	j=15
+	if (max(cocos[,j],na.rm=T)>100){
+		breaks_at=10
+	}else{
+		breaks_at=1	
+	}
+
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))
+
+    	#histogram of all data
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')
+        mtext("All data",cex=0.75,line=-1)
+    
+    
+    	#histogram of all data
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros removed",cex=0.75,line=-1)
+    
+
+    	#histogram of all data
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)
+
+
+
+		mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)
+		mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)
+
+
+@	
+\caption{Distribution of counts for all years and all divemasters}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=5,floating=FALSE >>=
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	
+	i=10
+	animals_per_year=aggregate(cocos[,i],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+	plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[i]))
+
+@
+\end{figure}	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=5,floating=FALSE >>=
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	
+	i=11
+	animals_per_year=aggregate(cocos[,i],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+	plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[i]))
+
+@
+\end{figure}	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=5,floating=FALSE >>=
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	
+	i=12
+	animals_per_year=aggregate(cocos[,i],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+	plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[i]))
+
+@
+\end{figure}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=5,floating=FALSE >>=
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	
+	i=13
+	animals_per_year=aggregate(cocos[,i],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+	plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[i]))
+
+@
+\end{figure}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=5,floating=FALSE >>=
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	
+	i=14
+	animals_per_year=aggregate(cocos[,i],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+	plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[i]))
+
+@
+\end{figure}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+<<fig=TRUE,echo=FALSE,width=8,height=5,floating=FALSE >>=
+
+ 	colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+	
+	i=15
+	animals_per_year=aggregate(cocos[,i],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+	plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[i]))
+
+@
+\end{figure}	
+
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%% DISTRIBUTION OF COUNTS %%%%%%%%%%%%%
+
+
+\section{Distribution of counts}
+
+
+<<results=tex,echo=FALSE>>=
+	for (j in 10:15){
+		file=paste("myfile", j, ".pdf", sep="")
+		pdf(file=file, paper="special",width=8,height=5)
+
+#pdf(paste('Cocos_',names(cocos[j]),'_observer','_distribution','.pdf',sep=''),width=8,height=5)
+		boxplot(cocos[,j]~cocos[,9],pch='.',cex.axis=0.8,las=2,ylab='Number observed per dive',xlab='Divemaster',cex.lab=1.1,main=paste(names(cocos[j])))
+		dev.off()		
+		cat("\\includegraphics{", file, "}\n\n", sep="")
+}
+
+@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<results=tex,echo=FALSE>>=
+	for (j in 10:15){
+		file=paste("boxplot_count_vs_site", j, ".pdf", sep="")
+		pdf(file=file, paper="special",width=8,height=5)
+
+#pdf(paste('Cocos_',names(cocos[j]),'_observer','_distribution','.pdf',sep=''),width=8,height=5)
+		boxplot(cocos[,j]~cocos[,8],pch='.',cex.axis=0.8,las=2,ylab='Number observed per dive',xlab='Dive site',cex.lab=1.1,main=paste(names(cocos[j])))
+		dev.off()		
+		cat("\\includegraphics{", file, "}\n\n", sep="")
+}
+
+@
 
 
 
