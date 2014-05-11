@@ -1,3 +1,911 @@
+A
+Pop=matrix(0,nrow=2,ncol=max.time)#
+Pop[1,1]=10#
+Pop[2,1]=10
+for (i in 1:(max.time-1)){#
+	Pop[1:2,i+1]= A %*% Pop[1:2,i]#
+}
+Pop
+2+2
+2/3
+Pop=numeric(10)
+Pop
+Pop[1]=10
+Pop
+Pop=numeric(10)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+#
+for (i in 1:9){#
+	Pop[i+1]= Pop[i] + r*Pop[i] - u*Pop[i]#
+}
+Pop
+plot(Pop)
+Pop next year= Pop this year + Births - Deaths#
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+#
+for (i in 1:(max.time-1)){#
+	Pop[i+1]= Pop[i] + r*Pop[i] - u*Pop[i]#
+}
+Pop
+plot(Pop)
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+R=r-u#
+K=100#
+#
+for (i in 1:(max.time-1)){#
+	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
+}
+Pop
+plot(Pop)
+plot(Pop,type='b')
+?runif
+R=runif(1,min=1.4, max=2.5)
+R
+runif(10,min=1.4, max=2.5)
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+R=r-u#
+K=100#
+#
+for (i in 1:(max.time-1)){#
+	R=runif(1,min=1.4, max=2.5)#
+	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
+}
+plot(Pop)
+plot(Pop,type='l')
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+R=r-u#
+K=100#
+#
+for (i in 1:(max.time-1)){#
+	R=runif(1,min=1.4, max=2.5)#
+	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
+}
+points(Pop,type='l',col='red')
+90:120
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+R=r-u#
+K=100#
+#
+for (i in 1:(max.time-1)){#
+	R=runif(1,min=1.4, max=2.5)#
+	K=sample(90:120,1,replace=F)#
+	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
+}
+plot(Pop,type='b')
+Pop
+Pop next year= Pop this year + Births - Deaths#
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+R=r-u#
+K=100#
+#
+for (i in 1:(max.time-1)){#
+	R=runif(1,min=1.4, max=2.5)#
+	K=sample(95:105,1,replace=F)#
+	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
+}
+Pop
+plot(Pop,type='b')
+Pop next year= Pop this year + Births - Deaths#
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+R=r-u#
+K=100#
+#
+for (i in 1:(max.time-1)){#
+	R=runif(1,min=1.4, max=2.5)#
+	K=sample(95:105,1,replace=F)#
+	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
+}
+points(Pop,type='b',col='red')
+95:105
+K=sample(95:105,1,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))#
+	Pop[i+1]= Pop[i] + R*Pop
+K=sample(95:105,1,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))
+K
+K=sample(95:105,10,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))
+K
+Pop next year= Pop this year + Births - Deaths#
+max.time=100#
+#
+Pop=numeric(max.time)#
+Pop[1]=10#
+#define parameters#
+r=2#
+u=0.2#
+R=r-u#
+K=100#
+#
+for (i in 1:(max.time-1)){#
+	R=runif(1,min=1.4, max=2.5)#
+	K=sample(95:105,1,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))#
+	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
+}
+plot(Pop)
+max.time=100#
+#
+Prey=numeric(max.time)#
+Pred=numeric(max.time)
+Prey
+Pred
+max.time=100#
+#
+Prey=numeric(max.time)#
+Pred=numeric(max.time)#
+#
+Prey[1]=500#
+Pred[1]=10
+Prey
+max.time=100#
+#
+Prey=numeric(max.time)#
+Pred=numeric(max.time)#
+#
+Prey[1]=500#
+Pred[1]=10#
+#
+#parameters#
+R=2-0.2#
+K=750#
+alpha=0.002#
+gamma=0.12#
+mu=0.15#
+#
+#model itself#
+for (i in 1:(max.time-1)){#
+	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
+	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
+}
+Prey
+Pred
+plot(Prey,type='l')
+Pred
+plot(Prey,type='l',ylim=c(0,800))
+points(Pred,type='l',col='red')
+max.time=100#
+#
+Prey=numeric(max.time)#
+Pred=numeric(max.time)#
+#
+Prey[1]=500#
+Pred[1]=10#
+#
+#parameters#
+R=2-0.2#
+K=750#
+alpha=0.002#
+gamma=0.12#
+mu=0.15#
+#
+#model itself#
+for (i in 1:(max.time-1)){#
+	mu=runif(1,min=0.1,max=0.2)#
+	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
+	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
+}
+Pred
+plot(Prey,type='l',ylim=c(0,800))
+points(Pred,type='l',col='red')
+plot(Pred,type='l',col='red')
+max.time=100#
+#
+Prey=numeric(max.time)#
+Pred=numeric(max.time)#
+#
+Prey[1]=500#
+Pred[1]=10#
+#
+#parameters#
+R=2-0.2#
+K=750#
+alpha=0.002#
+gamma=0.12#
+mu=0.15#
+#
+#model itself#
+for (i in 1:(max.time-1)){#
+	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
+	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
+}
+plot(Pred)
+max.time=100#
+#
+Prey=numeric(max.time)#
+Pred=numeric(max.time)#
+#
+Prey[1]=500#
+Pred[1]=10#
+#
+#parameters#
+R=2-0.2#
+K=750#
+alpha=0.002#
+gamma=0.12#
+mu=0.25#
+#
+#model itself#
+for (i in 1:(max.time-1)){#
+	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
+	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
+}
+points(Pred,type='l',col='blue')
+Pred
+max.time=100#
+N1=numeric(max.time)#
+N2=numeric(max.time)
+N1
+N2
+max.time=100#
+N1=numeric(max.time)#
+N2=numeric(max.time)#
+N1[1]=5#
+N2[1]=10#
+#
+#parameter values#
+r1=1.5#
+r2=2#
+d1=0.4#
+d2=0.2#
+u1=0.4#
+u2=0.3#
+#
+for (i in 1:(max.time-1)){#
+	Births1=r1*N1[i]#
+	Births2=r2*N2[i]#
+	N1[i+1]= N1[i]+ Births1 - (d1*Births1) - u1*N1[i]  + (d2*Births2)#
+	N2[i+1]= N2[i] + Births2 - (d2*Births2) - u2*N2[i] + (d1*Births1)#
+}
+N1
+N2
+plot(N1,type='l')
+points(N2,type='l',col='red')
+total_N=N1+N2
+total_N
+plot(N1/total_N, type='l',col='red')
+plot(N1/total_N, type='l',col='red',ylim=c(0,1))
+points(N2/total_N, type='l',col='blue',ylim=c(0,1))
+max.time=100#
+N1=numeric(max.time)#
+N2=numeric(max.time)#
+N1[1]=5#
+N2[1]=10#
+#
+#parameter values#
+r1=1.5#
+r2=2#
+d1=0.4#
+d2=0.2#
+u1=0.4#
+u2=0.3#
+for (i in 1:(max.time-1)){#
+	Births1=r1*N1[i]#
+	Births2=r2*N2[i]#
+	d1=runif(1,min=0.2,max=0.8)#
+	d2=runif(1,min=0.4,max=0.6)#
+	N1[i+1]= N1[i]+ Births1 - (d1*Births1) - u1*N1[i]  + (d2*Births2)#
+	N2[i+1]= N2[i] + Births2 - (d2*Births2) - u2*N2[i] + (d1*Births1)#
+}#
+#
+total_N=N1+N2
+plot(N1/total_N, type='l',col='red',ylim=c(0,1))
+points(N2/total_N,type='l',col='blue')
+?glmmPQL
+library(mass)
+library(Mass)
+library(MASS)
+?glmmPQL
+install.packages("glmmADMB", repos="http://r-forge.r-project.org",#
+                      type="source")
+i
+j
+save.image()
+i
+j
+citation()
+r=1.5#
+K=30#
+n=matrix(0,nrow=1,ncol=10)#
+#
+for (j in 1:9){#
+	n[i+1]=n[i]+ r*n[i]*(1- (r/K))#
+}
+r=1.5#
+K=30#
+n=matrix(0,nrow=1,ncol=10)#
+#
+for (i in 1:9){#
+	n[i+1]=n[i]+ r*n[i]*(1- (r/K))#
+}
+n
+r=1.5#
+K=30#
+n=matrix(2,nrow=1,ncol=10)#
+#
+for (i in 1:9){#
+	n[i+1]=n[i]+ r*n[i]*(1- (r/K))#
+}
+n
+r=1.5#
+K=30#
+n=matrix(2,nrow=1,ncol=10)#
+#
+for (i in 1:9){#
+	n[i+1]=n[i]+ r*n[i]*(1- (n[i]/K))#
+}
+n
+plot(n)
+plot(c(n))
+plot(c(n),type='l')
+plot(c(n),type='b')
+r=1.5#
+K=30#
+n=matrix(2,nrow=1,ncol=10)#
+#
+for (i in 1:19){#
+	n[i+1]=n[i]+ r*n[i]*(1- (n[i]/K))#
+}
+n
+plot(c(n),type='b')
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(100,nrow=1,ncol=100)#
+r=1.8#
+K=1#
+a=0.8#
+b=1.3#
+mu=0.006#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*a*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(100,nrow=1,ncol=100)#
+r=1.8#
+K=1#
+a=0.8#
+b=1.3#
+mu=0.006#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*Prey[j]*Pred[j]/(k+Prey[j])#
+	Pred[j+1]=Pred[j] + b*a*Prey[j]*Pred[j]/(k+Prey[j]) - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(100,nrow=1,ncol=100)#
+r=1.8#
+K=1#
+a=0.8#
+b=1.3#
+mu=0.006#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + b*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(100,nrow=1,ncol=100)#
+r=1.8#
+K=100#
+a=0.8#
+gamma=1.3#
+mu=0.006#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+Prey=matrix(0.5,nrow=1,ncol=100)#
+Pred=matrix(5,nrow=1,ncol=100)#
+r=1.8#
+K=1#
+a=0.8#
+gamma=1.3#
+mu=0.006#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(0.5,nrow=1,ncol=100)#
+Pred=matrix(0.3,nrow=1,ncol=100)#
+r=1.8#
+K=1#
+a=0.8#
+gamma=1.3#
+mu=0.006#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(0.5,nrow=1,ncol=100)#
+Pred=matrix(0.3,nrow=1,ncol=100)#
+r=1.8#
+K=1#
+a=0.8#
+gamma=1.3#
+mu=0.6#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+Pred
+plot(Pred)
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(100,nrow=1,ncol=100)#
+r=0.5#
+d=0.1#
+b=3#
+mu=0.2#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(10,nrow=1,ncol=100)#
+Pred=matrix(2,nrow=1,ncol=100)#
+r=1.8#
+K=100#
+a=0.8#
+gamma=1.3#
+mu=0.6#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+plot(Prey[1:10,])
+plot(Prey[1:10])
+plot(Prey[1:13])
+plot(Prey[1:14])
+Pred
+plot(Pred)
+Prey=matrix(10,nrow=1,ncol=100)#
+Pred=matrix(2,nrow=1,ncol=100)#
+r=1.8#
+K=100#
+a=0.8#
+gamma=0.2#
+mu=0.6#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+Pred
+plot(Pred)
+Prey=matrix(10,nrow=1,ncol=100)#
+Pred=matrix(2,nrow=1,ncol=100)#
+r=1.8#
+K=100#
+a=0.8#
+gamma=0.5#
+mu=0.6#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Pred
+Prey=matrix(10,nrow=1,ncol=100)#
+Pred=matrix(2,nrow=1,ncol=100)#
+r=1.8#
+K=100#
+a=0.8#
+gamma=0.9#
+mu=0.6#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Pred
+Prey=matrix(10,nrow=1,ncol=100)#
+Pred=matrix(2,nrow=1,ncol=100)#
+r=1.8#
+K=100#
+a=0.8#
+gamma=0.8#
+mu=0.6#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Pred
+plot(Pred)
+plot(Prey)
+Prey
+plot(Prey[1:50])
+Prey=matrix(10,nrow=1,ncol=100)#
+Pred=matrix(2,nrow=1,ncol=100)#
+r=1.8#
+K=1#
+a=0.8#
+gamma=0.8#
+mu=0.6#
+k=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
+	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(100,nrow=1,ncol=100)#
+r=0.5#
+d=0.1#
+b=3#
+mu=0.2#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(1,nrow=1,ncol=100)#
+r=0.5#
+d=0.1#
+b=3#
+mu=0.2#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}#
+##ode solver of Lotka-Volterra#
+library(deSolve)#
+LotVmod <- function (Time, State, Pars) {#
+    with(as.list(c(State, Pars)), {#
+        dx = x*(alpha - beta*y)#
+        dy = -y*(gamma - delta*x)#
+        return(list(c(dx, dy)))#
+    })#
+}#
+Pars <- c(alpha = 2, beta = .5, gamma = .2, delta = .6)#
+State <- c(x = 10, y = 10)#
+Time <- seq(0, 100, by = 1)#
+out <- as.data.frame(ode(func = LotVmod, y = State, parms = Pars, times = Time))#
+matplot(out[,-1], type = "l", xlab = "time", ylab = "population")#
+legend("topright", c("Cute bunnies", "Rabid foxes"), lty = c(1,2), col = c(1,2), box.lwd = 0)#
+library(deSolve)#
+LotVmod <- function (Time, State, Pars) {#
+    with(as.list(c(State, Pars)), {#
+        dx = x*(alpha - beta*y)#
+        dy = -y*(gamma - delta*x)#
+        return(list(c(dx, dy)))#
+    })#
+}#
+Pars <- c(alpha = 2, beta = .5, gamma = .2, delta = .6)#
+State <- c(x = 10, y = 10)#
+Time <- seq(0, 100, by = 1)#
+out <- as.data.frame(ode(func = LotVmod, y = State, parms = Pars, times = Time))#
+matplot(out[,-1], type = "l", xlab = "time", ylab = "population")#
+legend("topright", c("Cute bunnies", "Rabid foxes"), lty = c(1,2), col = c(1,2), box.lwd = 0)#
+plot(100,100,ylim=c(0,30),xlim=c(0,10))#
+#
+for (j in 1:100){#
+points(out$x[j],out$y[j],pch=16,col=rgb(1,0,0,alpha=0.1))#
+segments(out$x[j],out$y[j],out$x[j+1],out$y[j+1])#
+#
+for (i in 1:50){#
+	points(i+100,i+100)#
+	}#
+}
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(1,nrow=1,ncol=100)#
+r=0.5#
+d=0.1#
+b=3#
+mu=0.2#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Pred
+Prey
+Prey=matrix(100,nrow=1,ncol=100)#
+Pred=matrix(1,nrow=1,ncol=100)#
+r=0.5#
+d=0.1#
+b=0.5#
+mu=0.2#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Pred
+Prey=matrix(1000,nrow=1,ncol=100)#
+Pred=matrix(20,nrow=1,ncol=100)#
+r=0.25#
+d=0.010#
+b=0.008#
+mu=0.1#
+#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Ored
+Pred
+plot(Pred)
+par(plot=new)
+par(new=T)
+plot(Prey,col='red')
+r=0.25#
+d=0.010#
+b=0.008#
+mu=0.1#
+#
+Prey=matrix(r/d,nrow=1,ncol=100)#
+Pred=matrix(20,nrow=1,ncol=100)#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Pred
+r=0.25#
+d=0.010#
+b=0.008#
+mu=0.1#
+#
+Prey=matrix(r/d,nrow=1,ncol=100)#
+Pred=matrix(mu/(d*b),nrow=1,ncol=100)#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Pred
+r=0.25#
+d=0.010#
+b=0.008#
+mu=0.1#
+#
+Prey=matrix(r/d,nrow=1,ncol=100)#
+Pred=matrix(mu/(d*b),nrow=1,ncol=100)#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+r=0.25#
+d=0.010#
+b=0.008#
+mu=0.1#
+#
+Prey=matrix(mu/(d*b),nrow=1,ncol=100)#
+Pred=matrix(r/d,nrow=1,ncol=100)#
+for (j in 1:100){#
+	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
+	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
+}
+Prey
+Pred
+Pop=numeric(100)
+Pop
+Pop[1]=10
+Pop
+Pop[1]=10#
+#
+r=2#
+u=0.4#
+for (t in 1:100){#
+	Pop[t+1] = Pop[t] + r*Pop[t] - u*Pop[t]#
+}
+Pop
+plot(Pop)
+plot(Pop,xlim=c(0,20))
+for (t in 1:20){#
+	Pop[t+1] = Pop[t] + r*Pop[t] - u*Pop[t]#
+}#
+#
+plot(Pop)
+Pop
+Pop=numeric(20)#
+Pop[1]=10#
+#
+r=2#
+u=0.4#
+for (t in 1:20){#
+	Pop[t+1] = Pop[t] + r*Pop[t] - u*Pop[t]#
+}#
+#
+plot(Pop)
+Pop=numeric(20)#
+Pop[1]=10#
+#
+r=2#
+u=0.4#
+R=r-u#
+K=100#
+#
+for (t in 1:20){#
+	Pop[t+1] = Pop[t] + R*Pop[t]*(1- Pop[t]/K)#
+}#
+#
+plot(Pop)
+plot(Pop,type='b')
+sample(90:110,1,replace=F)
+Pop=numeric(20)#
+Pop[1]=10#
+#
+r=2#
+u=0.4#
+R=r-u#
+K=100#
+#
+for (t in 1:20){#
+	K=sample(90:110,1,sample=FALSE)#
+	Pop[t+1] = Pop[t] + R*Pop[t]*(1- Pop[t]/K)#
+}#
+#
+plot(Pop,type='b')
+Pop=numeric(20)#
+Pop[1]=10#
+#
+r=2#
+u=0.4#
+R=r-u#
+K=100#
+#
+for (t in 1:20){#
+	K=sample(90:110,1,replace=FALSE)#
+	Pop[t+1] = Pop[t] + R*Pop[t]*(1- Pop[t]/K)#
+}#
+#
+plot(Pop,type='b')
+gamma=0.12#
+alpha=0.002#
+mu=0.15#
+R=2-0.2#
+#
+Prey=numeric(time)#
+Pred=numeric(time)#
+#
+for (t in 1:time){#
+	Prey[t+1]= Prey[t] + R*Prey[t]*(1- Prey[t]/K) - alpha*Prey[t]*Pred[t]#
+	Pred[t+1]= Pred[t] + gamma*(alpha*Prey[t]*Pred[t]) - mu*Pred[t]#
+}
+time=100#
+#
+gamma=0.12#
+alpha=0.002#
+mu=0.15#
+R=2-0.2#
+#
+Prey=numeric(time)#
+Pred=numeric(time)#
+#
+for (t in 1:time){#
+	Prey[t+1]= Prey[t] + R*Prey[t]*(1- Prey[t]/K) - alpha*Prey[t]*Pred[t]#
+	Pred[t+1]= Pred[t] + gamma*(alpha*Prey[t]*Pred[t]) - mu*Pred[t]#
+}
+plot(Prey,type='b')
+Prey
+time=100#
+#
+gamma=0.12#
+alpha=0.002#
+mu=0.15#
+R=2-0.2#
+#
+Prey=numeric(time)#
+Pred=numeric(time)#
+#
+Pred[1]=500#
+Pred[1]=10#
+#
+for (t in 1:time){#
+	Prey[t+1]= Prey[t] + R*Prey[t]*(1- Prey[t]/K) - alpha*Prey[t]*Pred[t]#
+	Pred[t+1]= Pred[t] + gamma*(alpha*Prey[t]*Pred[t]) - mu*Pred[t]#
+}
+plot(Prey,type='b')
+time=100#
+#
+gamma=0.12#
+alpha=0.002#
+mu=0.15#
+R=2-0.2#
+K=750#
+#
+Prey=numeric(time)#
+Pred=numeric(time)#
+#
+Prey[1]=500#
+Pred[1]=10#
+#
+for (t in 1:time){#
+	Prey[t+1]= Prey[t] + R*Prey[t]*(1- Prey[t]/K) - alpha*Prey[t]*Pred[t]#
+	Pred[t+1]= Pred[t] + gamma*(alpha*Prey[t]*Pred[t]) - mu*Pred[t]#
+}
+Prey
+Pred
+plot(Prey,type='b')
+quartz()
+plot(Pred,type='b',col='red')
 time=300#
 #
 gamma=0.12#
@@ -82,276 +990,19 @@ cocos=na.omit(cocos[,c(3,7,8,17,19,20,23,12,22,25:32)])#
 cocos$SIN_TIME=sin(2*pi*cocos$StudyJulianDate/365.25)#
 cocos$COS_TIME=cos(2*pi*cocos$StudyJulianDate/365.25)
 head(cocos)
-names(cocos)
-for (j in 1:nrow(cocos)){#
-	if (cocos[j,10:15]>0){#
-		cocos[j,10:15]#
-	}#
-	cocos$number_species[j]=sum(cocos[j,10:15])#
-}
-j
-head(cocos)
-species=cocos[,10:15]
-head(species)
-species[species>0]=1
-head(species)
-cocos[,10:15]=species
-head(cocos)
-for (j in 1:nrow(cocos)){#
-	cocos$number_species[j]=sum(cocos[j,10:15])#
-}
-head(cocos)
-aggregate(cocos$number_species, by=list(StudyYear),FUN=mean)
-aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean)
-plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean))
-plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean),ylim=c(0,6))
-plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=sd))
-plot(aggregate(cocos$number_species, by=list(cocos$StudyYear),FUN=mean),ylim=c(0,6))
-Sweave(Supplementary_Material_Draft.Rnw)
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-head(cocos)
-aggregate(cocos$StudyYear,by=list(cocos$StudyYear),FUN=mean)
-table(cocos$StudyYear)
-data.frame(table(cocos$StudyYear))
-Var1=1992:2013
-dives_per_year$Var1=1992:2013
-dives_per_year=data.frame(table(cocos$StudyYear))
-dives_per_year$Var1=1992:2013
-dives_per_year
-plot(dives_per_year)
-barplot(dives_per_year)
-barplot(dives_per_year$Var1,dives_per_year$Freq)
-barplot(dives_per_year$Freq)
-barplot(dives_per_year$Freq~dives_per_year$Var1)
-plot(dives_per_year$Var1,dives_per_year$Freq)
-help(plot)
-plot(dives_per_year$Var1,dives_per_year$Freq,type='h')
-barplot(dives_per_year$Var1,dives_per_year$Freq,type='h')
-barplot(dives_per_year$Freq)
-help(barplot)
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1)
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2)
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year')
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)')
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2500))
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2300))
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2400))
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2500))
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)',ylim=c(0,2000))
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)'
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)')
-barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per year',xlab='Time (years)')
-head(cocos)
+table(cocos$CurrentCode)
+head(main)
+table(main$CurrentCode)
+str(main$CurrentCode)
+table(main$SeaCondCode)
+table(main$WeatherCode)
+main$TimeCode[1:100]
+main$TimeCode[1:1000]
+main$TimeCode[1:10000]
+head(main)
+main$Year[1:3000]
+head(main)
 table(cocos$SiteCode)
-table(cocos$SiteCode,cocos$StudyYear)
-data.frame(table(cocos$SiteCode,cocos$StudyYear))
-plot(table(cocos$SiteCode,cocos$StudyYear))
-table(cocos$SiteCode,cocos$StudyYear)
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-table(cocos$SiteCode,cocos$StudyYear)
-dives_per_site=table(cocos$SiteCode,cocos$StudyYear)
-names(dives_per_site)=1992:2013
-dives_per_site
-row.names(dives_per_site)=101:118
-row.names(dives_per_site)=brown
-row.names(dives_per_site)='brown'
-row.names(dives_per_site)=rep('brown',times=18)
-dives_per_site
-colnames(dives_per_site)=1992:2013
-colnames(dives_per_site)=1992:2013
-dives_per_site
-dives_per_site=table(cocos$SiteCode,cocos$StudyYear)#
-rownames(dives_per_site)=101:118#
-colnames(dives_per_site)=1992:2013
-dives_per_site
-plot(dives_per_site[1,])
-plot(dives_per_site[1,]/dives_per_year$Freq)
-plot(dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,1),col=1)
-plot(dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,1),col=1,type='l')
-for (j in 2:nrow(dives_per_site)){#
-	points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,1),col=j,type='l')#
-}
-plot(dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l')#
-for (j in 2:nrow(dives_per_site)){#
-	points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')#
-}
-plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')
-for (j in 2:nrow(dives_per_site)){
-points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')
-}
-plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')#
-for (j in 2:nrow(dives_per_site)){#
-	points(dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')#
-}
-plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')#
-for (j in 2:nrow(dives_per_site)){#
-	points(colnames(dives_per_site),dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=j,type='l')#
-}
-xtab1<-xtable(dives_per_site, caption="Number of dives at each site during each year",  label="table1")
-require(xtable)
-xtab1<-xtable(dives_per_site, caption="Number of dives at each site during each year",  label="table1")
-print(xtab1,include.rownames = TRUE)
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-table(cocos$SiteCode,cocos$DiverCode)
-table(cocos$SiteCode,cocos$DiverCode)
-dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
-dives_per_site_diver=table(cocos$DiverCode)
-dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
-table(cocos$DiverCode)
-rep(table(cocos$DiverCode),times=18)
-table(cocos$DiverCode)
-dives_per_site_diver/table(cocos$DiverCode)
-dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode))
-rbind(table(cocos$DiverCode),table(cocos$DiverCode))
-dives_per_site_diver/rbind(rep(table(cocos$DiverCode),times=18))
-rbind(rep(table(cocos$DiverCode),times=18))
-dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode))
-rbind(table(cocos$DiverCode),table(cocos$DiverCode))
-rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode))
-dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode))
-xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=3)
-print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)
-print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-table(cocos$DiverCode,cocos$StudyYear)
-dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
-rownames(dives_per_diver_year=)=101:118
-dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
-rownames(dives_per_diver_year)=101:118
-dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
-rownames(dives_per_diver_year)=1:39
-colnames(dives_per_diver_year)=1992:2013
-dives_per_diver_year
-dives_per_diver_year[dives_per_diver_year>0]=1
-dives_per_diver_year
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,])
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,])
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Shark ID #',xlab='Time (year)',las = 1)
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='divemaster ID,xlab='Time (year)',las = 1,ylim=0,40)
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='divemaster ID,xlab='Time (year)',las = 1,ylim=c(0,40))
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
-dives_per_diver_year[dives_per_diver_year==0]='NA'
-dives_per_diver_year
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
-for (z in 1:nrow(dives_per_diver_year)){#
-		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+z),ylim=c(0,40))#
-	}
-z
-dives_per_diver_year=table(cocos$DiverCode,cocos$StudyYear)
-rownames(dives_per_diver_year)=1:39
-colnames(dives_per_diver_year)=1992:2013
-dives_per_diver_year[dives_per_diver_year>0]=1
-dives_per_diver_year[dives_per_diver_year==0]=0
-dives_per_diver_year
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
-for (z in 1:nrow(dives_per_diver_year)){
-points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+z),ylim=c(0,40))
-}
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
-for (z in 1:nrow(dives_per_diver_year)){
-points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]*dives_per_diver_year[z,]+z),ylim=c(0,40))
-}
-dives_per_diver_year[z,]*dives_per_diver_year[z,]+z
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))
-dives_per_diver_year[z,]
-dives_per_diver_year[z,]*dives_per_diver_year[z,]
-dives_per_diver_year[z,]+dives_per_diver_year[z,]*z
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(0,40))#
-	for (z in 1:nrow(dives_per_diver_year)){#
-		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(0,40))#
-	}
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(1,40))
-for (z in 1:nrow(dives_per_diver_year)){
-points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))
-}
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40))
-for (z in 1:nrow(dives_per_diver_year)){
-points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))
-}
-axis(2, at=1:nrow(dives_per_diver_year), labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.40,hadj=0.2)
-axis(2, at=1:nrow(dives_per_diver_year), labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
-axis(2, at=1:nrow(dives_per_diver_year)+0.5, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
-axis(2, at=1:nrow(dives_per_diver_year)+2, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
-axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40))#
-	for (z in 1:nrow(dives_per_diver_year)){#
-		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))#
-	}#
-	 axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
-abline(h=1)
-abline(h=1+1)
-abline(h=2:40)
-axis(1, at=ticks.at, labels=1992:2013, tick=T,las=2,cex.axis=0.60,hadj=0.8)
-axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=0.60,hadj=0.8)
-axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=1,hadj=0.8)
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40))#
-	for (z in 1:nrow(dives_per_diver_year)){#
-		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40))#
-	}#
-	 axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)#
-	 abline(h=2:40)#
-	axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=1,hadj=0.8)
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40),pch=16)
-points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40),pch=16)
-plot(colnames(dives_per_diver_year),dives_per_diver_year[1,],type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Time (year)',las = 1, ylim=c(2,40),pch=16)#
-	for (z in 1:nrow(dives_per_diver_year)){#
-		points(colnames(dives_per_diver_year),(dives_per_diver_year[z,]+dives_per_diver_year[z,]*z),ylim=c(1,40),pch=16)#
-	}#
-	 axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)#
-	 abline(h=2:40)#
-	axis(1, at=1992:2013, labels=1992:2013, tick=T,las=2,cex.axis=1,hadj=0.8)
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
-dives_per_site_diver
-t(dives_per_site_diver)
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-print(t(dives_per_site_diver),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-print(t(dives_per_site_diver),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
-xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)
-print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-print(t(xtab1),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)
-print(xtab1)
-print(t(xtab1),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-print(t(xtab1,digits=2),include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-t(xtab1)
-xtab1
-xtab1
-t(xtab1)
-xtable(t(xtab1))
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
-Sweave('Supplementary_Material_Draft.Rnw')
+table(cocos$Site)
+table(main$SiteCode)
+table(main$Site)
