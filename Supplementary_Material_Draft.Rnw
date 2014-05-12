@@ -395,4 +395,26 @@ barplot(dives_per_year$Freq,names.arg=dives_per_year$Var1,las=2,ylab='Dives per 
 
 %%%%%%%%%%%% EXPLANATORY VARIABLES %%%%%%%%%%%%%
 
+% Histogram of explanatory variables, need to adjust y axes
+\begin{figure}[h!]
+\centering
+<<fig=TRUE,echo=FALSE,width=6,height=6,floating=FALSE>>=
+	par (mfrow=c(2,2),oma=c(2,4,0,0)+0.1,mar=c(4,2,2,2)+0.1)
+
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white',space=0,font=2)
+
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='',font=2)
+	
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='',font=2)
+	
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='',font=2)
+
+	mtext('Frequency',2,line=2,outer=TRUE,font=2)
+@	
+\caption{Distributions of explanatory variables}
+\end{figure}
+
+
+
+
 \end{document}

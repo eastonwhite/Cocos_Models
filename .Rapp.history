@@ -1,624 +1,3 @@
-A
-Pop=matrix(0,nrow=2,ncol=max.time)#
-Pop[1,1]=10#
-Pop[2,1]=10
-for (i in 1:(max.time-1)){#
-	Pop[1:2,i+1]= A %*% Pop[1:2,i]#
-}
-Pop
-2+2
-2/3
-Pop=numeric(10)
-Pop
-Pop[1]=10
-Pop
-Pop=numeric(10)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-#
-for (i in 1:9){#
-	Pop[i+1]= Pop[i] + r*Pop[i] - u*Pop[i]#
-}
-Pop
-plot(Pop)
-Pop next year= Pop this year + Births - Deaths#
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-#
-for (i in 1:(max.time-1)){#
-	Pop[i+1]= Pop[i] + r*Pop[i] - u*Pop[i]#
-}
-Pop
-plot(Pop)
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-R=r-u#
-K=100#
-#
-for (i in 1:(max.time-1)){#
-	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
-}
-Pop
-plot(Pop)
-plot(Pop,type='b')
-?runif
-R=runif(1,min=1.4, max=2.5)
-R
-runif(10,min=1.4, max=2.5)
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-R=r-u#
-K=100#
-#
-for (i in 1:(max.time-1)){#
-	R=runif(1,min=1.4, max=2.5)#
-	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
-}
-plot(Pop)
-plot(Pop,type='l')
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-R=r-u#
-K=100#
-#
-for (i in 1:(max.time-1)){#
-	R=runif(1,min=1.4, max=2.5)#
-	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
-}
-points(Pop,type='l',col='red')
-90:120
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-R=r-u#
-K=100#
-#
-for (i in 1:(max.time-1)){#
-	R=runif(1,min=1.4, max=2.5)#
-	K=sample(90:120,1,replace=F)#
-	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
-}
-plot(Pop,type='b')
-Pop
-Pop next year= Pop this year + Births - Deaths#
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-R=r-u#
-K=100#
-#
-for (i in 1:(max.time-1)){#
-	R=runif(1,min=1.4, max=2.5)#
-	K=sample(95:105,1,replace=F)#
-	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
-}
-Pop
-plot(Pop,type='b')
-Pop next year= Pop this year + Births - Deaths#
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-R=r-u#
-K=100#
-#
-for (i in 1:(max.time-1)){#
-	R=runif(1,min=1.4, max=2.5)#
-	K=sample(95:105,1,replace=F)#
-	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
-}
-points(Pop,type='b',col='red')
-95:105
-K=sample(95:105,1,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))#
-	Pop[i+1]= Pop[i] + R*Pop
-K=sample(95:105,1,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))
-K
-K=sample(95:105,10,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))
-K
-Pop next year= Pop this year + Births - Deaths#
-max.time=100#
-#
-Pop=numeric(max.time)#
-Pop[1]=10#
-#define parameters#
-r=2#
-u=0.2#
-R=r-u#
-K=100#
-#
-for (i in 1:(max.time-1)){#
-	R=runif(1,min=1.4, max=2.5)#
-	K=sample(95:105,1,replace=F,prob=c(0.4,0.2,0.5,0.10,0.5,0.6,0.7,0.2,0.7,0.9,0.1))#
-	Pop[i+1]= Pop[i] + R*Pop[i]*(1- Pop[i]/K)#
-}
-plot(Pop)
-max.time=100#
-#
-Prey=numeric(max.time)#
-Pred=numeric(max.time)
-Prey
-Pred
-max.time=100#
-#
-Prey=numeric(max.time)#
-Pred=numeric(max.time)#
-#
-Prey[1]=500#
-Pred[1]=10
-Prey
-max.time=100#
-#
-Prey=numeric(max.time)#
-Pred=numeric(max.time)#
-#
-Prey[1]=500#
-Pred[1]=10#
-#
-#parameters#
-R=2-0.2#
-K=750#
-alpha=0.002#
-gamma=0.12#
-mu=0.15#
-#
-#model itself#
-for (i in 1:(max.time-1)){#
-	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
-	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
-}
-Prey
-Pred
-plot(Prey,type='l')
-Pred
-plot(Prey,type='l',ylim=c(0,800))
-points(Pred,type='l',col='red')
-max.time=100#
-#
-Prey=numeric(max.time)#
-Pred=numeric(max.time)#
-#
-Prey[1]=500#
-Pred[1]=10#
-#
-#parameters#
-R=2-0.2#
-K=750#
-alpha=0.002#
-gamma=0.12#
-mu=0.15#
-#
-#model itself#
-for (i in 1:(max.time-1)){#
-	mu=runif(1,min=0.1,max=0.2)#
-	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
-	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
-}
-Pred
-plot(Prey,type='l',ylim=c(0,800))
-points(Pred,type='l',col='red')
-plot(Pred,type='l',col='red')
-max.time=100#
-#
-Prey=numeric(max.time)#
-Pred=numeric(max.time)#
-#
-Prey[1]=500#
-Pred[1]=10#
-#
-#parameters#
-R=2-0.2#
-K=750#
-alpha=0.002#
-gamma=0.12#
-mu=0.15#
-#
-#model itself#
-for (i in 1:(max.time-1)){#
-	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
-	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
-}
-plot(Pred)
-max.time=100#
-#
-Prey=numeric(max.time)#
-Pred=numeric(max.time)#
-#
-Prey[1]=500#
-Pred[1]=10#
-#
-#parameters#
-R=2-0.2#
-K=750#
-alpha=0.002#
-gamma=0.12#
-mu=0.25#
-#
-#model itself#
-for (i in 1:(max.time-1)){#
-	Prey[i+1]= Prey[i] + R*Prey[i]*(1 - Prey[i]/K)  - alpha*Prey[i]*Pred[i]#
-	Pred[i+1]= Pred[i] + gamma*(alpha*Prey[i]*Pred[i])   - mu*Pred[i]#
-}
-points(Pred,type='l',col='blue')
-Pred
-max.time=100#
-N1=numeric(max.time)#
-N2=numeric(max.time)
-N1
-N2
-max.time=100#
-N1=numeric(max.time)#
-N2=numeric(max.time)#
-N1[1]=5#
-N2[1]=10#
-#
-#parameter values#
-r1=1.5#
-r2=2#
-d1=0.4#
-d2=0.2#
-u1=0.4#
-u2=0.3#
-#
-for (i in 1:(max.time-1)){#
-	Births1=r1*N1[i]#
-	Births2=r2*N2[i]#
-	N1[i+1]= N1[i]+ Births1 - (d1*Births1) - u1*N1[i]  + (d2*Births2)#
-	N2[i+1]= N2[i] + Births2 - (d2*Births2) - u2*N2[i] + (d1*Births1)#
-}
-N1
-N2
-plot(N1,type='l')
-points(N2,type='l',col='red')
-total_N=N1+N2
-total_N
-plot(N1/total_N, type='l',col='red')
-plot(N1/total_N, type='l',col='red',ylim=c(0,1))
-points(N2/total_N, type='l',col='blue',ylim=c(0,1))
-max.time=100#
-N1=numeric(max.time)#
-N2=numeric(max.time)#
-N1[1]=5#
-N2[1]=10#
-#
-#parameter values#
-r1=1.5#
-r2=2#
-d1=0.4#
-d2=0.2#
-u1=0.4#
-u2=0.3#
-for (i in 1:(max.time-1)){#
-	Births1=r1*N1[i]#
-	Births2=r2*N2[i]#
-	d1=runif(1,min=0.2,max=0.8)#
-	d2=runif(1,min=0.4,max=0.6)#
-	N1[i+1]= N1[i]+ Births1 - (d1*Births1) - u1*N1[i]  + (d2*Births2)#
-	N2[i+1]= N2[i] + Births2 - (d2*Births2) - u2*N2[i] + (d1*Births1)#
-}#
-#
-total_N=N1+N2
-plot(N1/total_N, type='l',col='red',ylim=c(0,1))
-points(N2/total_N,type='l',col='blue')
-?glmmPQL
-library(mass)
-library(Mass)
-library(MASS)
-?glmmPQL
-install.packages("glmmADMB", repos="http://r-forge.r-project.org",#
-                      type="source")
-i
-j
-save.image()
-i
-j
-citation()
-r=1.5#
-K=30#
-n=matrix(0,nrow=1,ncol=10)#
-#
-for (j in 1:9){#
-	n[i+1]=n[i]+ r*n[i]*(1- (r/K))#
-}
-r=1.5#
-K=30#
-n=matrix(0,nrow=1,ncol=10)#
-#
-for (i in 1:9){#
-	n[i+1]=n[i]+ r*n[i]*(1- (r/K))#
-}
-n
-r=1.5#
-K=30#
-n=matrix(2,nrow=1,ncol=10)#
-#
-for (i in 1:9){#
-	n[i+1]=n[i]+ r*n[i]*(1- (r/K))#
-}
-n
-r=1.5#
-K=30#
-n=matrix(2,nrow=1,ncol=10)#
-#
-for (i in 1:9){#
-	n[i+1]=n[i]+ r*n[i]*(1- (n[i]/K))#
-}
-n
-plot(n)
-plot(c(n))
-plot(c(n),type='l')
-plot(c(n),type='b')
-r=1.5#
-K=30#
-n=matrix(2,nrow=1,ncol=10)#
-#
-for (i in 1:19){#
-	n[i+1]=n[i]+ r*n[i]*(1- (n[i]/K))#
-}
-n
-plot(c(n),type='b')
-Prey=matrix(100,nrow=1,ncol=100)#
-Pred=matrix(100,nrow=1,ncol=100)#
-r=1.8#
-K=1#
-a=0.8#
-b=1.3#
-mu=0.006#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*Prey[j]*Pred[j]#
-	Pred[j+1]=Pred[j] + b*a*Prey[j]*Pred[j] - mu*Pred[j]#
-}
-Prey
-Pred
-Prey=matrix(100,nrow=1,ncol=100)#
-Pred=matrix(100,nrow=1,ncol=100)#
-r=1.8#
-K=1#
-a=0.8#
-b=1.3#
-mu=0.006#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*Prey[j]*Pred[j]/(k+Prey[j])#
-	Pred[j+1]=Pred[j] + b*a*Prey[j]*Pred[j]/(k+Prey[j]) - mu*Pred[j]#
-}
-Prey
-Pred
-Prey=matrix(100,nrow=1,ncol=100)#
-Pred=matrix(100,nrow=1,ncol=100)#
-r=1.8#
-K=1#
-a=0.8#
-b=1.3#
-mu=0.006#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + b*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-Pred
-Prey=matrix(100,nrow=1,ncol=100)#
-Pred=matrix(100,nrow=1,ncol=100)#
-r=1.8#
-K=100#
-a=0.8#
-gamma=1.3#
-mu=0.006#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-Prey=matrix(0.5,nrow=1,ncol=100)#
-Pred=matrix(5,nrow=1,ncol=100)#
-r=1.8#
-K=1#
-a=0.8#
-gamma=1.3#
-mu=0.006#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-Pred
-Prey=matrix(0.5,nrow=1,ncol=100)#
-Pred=matrix(0.3,nrow=1,ncol=100)#
-r=1.8#
-K=1#
-a=0.8#
-gamma=1.3#
-mu=0.006#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-Pred
-Prey=matrix(0.5,nrow=1,ncol=100)#
-Pred=matrix(0.3,nrow=1,ncol=100)#
-r=1.8#
-K=1#
-a=0.8#
-gamma=1.3#
-mu=0.6#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-Pred
-plot(Pred)
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
-	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
-}
-Prey=matrix(100,nrow=1,ncol=100)#
-Pred=matrix(100,nrow=1,ncol=100)#
-r=0.5#
-d=0.1#
-b=3#
-mu=0.2#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
-	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
-}
-Prey
-Pred
-Prey=matrix(10,nrow=1,ncol=100)#
-Pred=matrix(2,nrow=1,ncol=100)#
-r=1.8#
-K=100#
-a=0.8#
-gamma=1.3#
-mu=0.6#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-plot(Prey[1:10,])
-plot(Prey[1:10])
-plot(Prey[1:13])
-plot(Prey[1:14])
-Pred
-plot(Pred)
-Prey=matrix(10,nrow=1,ncol=100)#
-Pred=matrix(2,nrow=1,ncol=100)#
-r=1.8#
-K=100#
-a=0.8#
-gamma=0.2#
-mu=0.6#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-Pred
-plot(Pred)
-Prey=matrix(10,nrow=1,ncol=100)#
-Pred=matrix(2,nrow=1,ncol=100)#
-r=1.8#
-K=100#
-a=0.8#
-gamma=0.5#
-mu=0.6#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Pred
-Prey=matrix(10,nrow=1,ncol=100)#
-Pred=matrix(2,nrow=1,ncol=100)#
-r=1.8#
-K=100#
-a=0.8#
-gamma=0.9#
-mu=0.6#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Pred
-Prey=matrix(10,nrow=1,ncol=100)#
-Pred=matrix(2,nrow=1,ncol=100)#
-r=1.8#
-K=100#
-a=0.8#
-gamma=0.8#
-mu=0.6#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Pred
-plot(Pred)
-plot(Prey)
-Prey
-plot(Prey[1:50])
-Prey=matrix(10,nrow=1,ncol=100)#
-Pred=matrix(2,nrow=1,ncol=100)#
-r=1.8#
-K=1#
-a=0.8#
-gamma=0.8#
-mu=0.6#
-k=0.1#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j]*(1-(Prey[j]/K)) - a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2))#
-	Pred[j+1]=Pred[j] + gamma*a*(Prey[j]^2)*Pred[j]/((k^2)+(Prey[j]^2)) - mu*Pred[j]#
-}
-Prey
-Pred
-Prey=matrix(100,nrow=1,ncol=100)#
-Pred=matrix(100,nrow=1,ncol=100)#
-r=0.5#
-d=0.1#
-b=3#
-mu=0.2#
-#
-for (j in 1:100){#
-	Prey[j+1]=Prey[j] + r*Prey[j] - d*Prey[j]*Pred[j]#
-	Pred[j+1]=Pred[j] + b*d*Prey[j]*Pred[j] - mu*Pred[j]#
-}
-Prey
 Prey=matrix(100,nrow=1,ncol=100)#
 Pred=matrix(1,nrow=1,ncol=100)#
 r=0.5#
@@ -957,6 +336,12 @@ exp(-0.03089*21)
 exp(-0.04681217*21)
 exp(-0.01496579*21)
 exp(-0.08000*21)
+require(xtable)#
+	dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)#
+	xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)#
+	xtab1=t(xtab1)#
+	xtab1=xtable(xtab1,caption="Fraction of dives at each site for each diver", label="table1",digits=2)#
+	print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!',size="\\small")
 main=read.csv('FINAL_COMPLETE_main_species_data_EW.csv',header=T,sep=',')#
 cocos=subset(main,main$IslandCode==1)#
 cocos=cocos[,1:38]#
@@ -989,20 +374,729 @@ cocos=na.omit(cocos[,c(3,7,8,17,19,20,23,12,22,25:32)])#
 #define seasonality terms#
 cocos$SIN_TIME=sin(2*pi*cocos$StudyJulianDate/365.25)#
 cocos$COS_TIME=cos(2*pi*cocos$StudyJulianDate/365.25)
+require(xtable)#
+	dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)#
+	xtab1<-xtable(dives_per_site_diver/rbind(table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode),table(cocos$DiverCode)), caption="Fraction of dives at each site for each diver", label="table1",digits=2)#
+	xtab1=t(xtab1)#
+	xtab1=xtable(xtab1,caption="Fraction of dives at each site for each diver", label="table1",digits=2)#
+	print(xtab1,include.rownames = TRUE,floating.environment='sidewaystable',table.placement='h!',size="\\small")
+plot(xtab1)
+xtab1
+dives_per_site_diver=table(cocos$SiteCode,cocos$DiverCode)
+dives_per_site_diver
+dives_per_site_diver
+dives_per_site_diver=table(cocos$DiverCode,cocos$SiteCode)
+dives_per_site_diver
+nrow(dives_per_site_diver)
+dives_per_site_diver=table(cocos$DiverCode,cocos$SiteCode)
+plot(ncol(dives_per_site_diver)+1,nrow(dives_per_site_diver)+1, ylim=c(0,nrow(dives_per_site_diver)),xlim=c(0,ncol(dives_per_site_diver)))
+for (j in 1:nrow(dives_per_site_diver)){#
+		for (i in 1:ncol(dives_per_site_diver)){#
+			if (dives_per_site_diver[j,i]>0){#
+				points(i,j)#
+			}#
+		}#
+	}
+plot(ncol(dives_per_site_diver)+1,nrow(dives_per_site_diver)+1, ylim=c(0,nrow(dives_per_site_diver)),xlim=c(0,ncol(dives_per_site_diver)),type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Site ID')#
+	for (j in 1:nrow(dives_per_site_diver)){#
+		for (i in 1:ncol(dives_per_site_diver)){#
+			if (dives_per_site_diver[j,i]>0){#
+				points(i,j,pch=16)#
+			}#
+		}#
+	}
+axis(2, at=1:nrow(dives_per_diver_year)+1, labels=1:nrow(dives_per_diver_year), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+axis(2, at=1:nrow(dives_per_site_diver)+1, labels=1:nrow(dives_per_site_diver), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+axis(2, at=1:nrow(dives_per_site_diver), labels=1:nrow(dives_per_site_diver), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+plot(ncol(dives_per_site_diver)+1,nrow(dives_per_site_diver)+1, ylim=c(0,nrow(dives_per_site_diver)),xlim=c(0,ncol(dives_per_site_diver)),type='n',yaxt='n',xaxt='n',ylab='Divemaster ID',xlab='Site ID')#
+	for (j in 1:nrow(dives_per_site_diver)){#
+		for (i in 1:ncol(dives_per_site_diver)){#
+			if (dives_per_site_diver[j,i]>0){#
+				points(i,j,pch=16)#
+			}#
+		}#
+	}#
+#
+	axis(2, at=1:nrow(dives_per_site_diver), labels=1:nrow(dives_per_site_diver), tick=F,las=1,cex.axis=0.60,hadj=0.2)
+nrow(dives_per_site_diver)
+ncol(dives_per_site_diver)
+axis(1, at=1:col(dives_per_site_diver), labels=col(dives_per_site_diver), tick=T,las=2,cex.axis=1,hadj=0.8)
+axis(1, at=1:col(dives_per_site_diver), labels=1:col(dives_per_site_diver), tick=T,las=2,cex.axis=1,hadj=0.8)
+axis(1, at=1:ncol(dives_per_site_diver), labels=1:ncol(dives_per_site_diver), tick=T,las=2,cex.axis=1,hadj=0.8)
+mtext(2,"dude")
+mtext('dude',side=3,line=-2)
+mtext('dude',side=3,line=-2,at=1)
+mtext('dude',side=3,line=-2)
+mtext('dude',side=3,line=-2,las=2)
+mtext('dude',side=3,line=-2,las=1)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+par(mfrow=c(3,2))
+for (j in 10:15){
+animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+}
+par(mfrow=c(3,2))
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+quartz()
+par(mfrow=c(3,2))
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')
+par(mfrow=c(3,2))
+for (j in 10:15){
+animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+}
+quartz()
+par(mfrow=c(3,2))
+for (j in 10:15){
+animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)
+plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))),main=paste(names(cocos)[j]))
+}
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='Mean count per dive',xlab='Time (years)',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		#,main=paste(names(cocos)[j])#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		#,main=paste(names(cocos)[j])#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+mtext(paste(names(cocos)[j]),side=3,line=-2,at=2010)
+mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008)
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(0,0,1,1)+0.1)
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+quartz()
+quartz()
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(0,0,1,1)+0.1)
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)
+for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+}
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+	}
+quartz()
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+	}
+mtext('dude',1,line=2)
+mtext('dude',1,line=2,outer=TRUE)
+mtext('dude',1,line=1,outer=TRUE,font=2)
+mtext('dude',1,line=1,outer=TRUE,font=3)
+mtext('dude',1,line=1,outer=TRUE,font=2)
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+	}	#
+	mtext('Time (years)',1,line=1,outer=TRUE,font=2)#
+	mtext('Mean number of individuals per dive',2,line=1,outer=TRUE,font=2)
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+	}	#
+	mtext('Time (years)',1,line=2,outer=TRUE,font=2)#
+	mtext('Mean number of individuals per dive',2,line=2,outer=TRUE,font=2)
+Sweave('Supplementary_Material_Draft.Rnw')
+par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		#file=paste("timeseries", names(cocos[j]), ".pdf", sep="")#
+		#pdf(file=file, paper="special",width=8,height=5)#
+		animals_per_year=aggregate(cocos[,j],by=list(cocos$StudyYear),FUN=mean,na.rm=T)#
+		plot(1992:2013,as.numeric(animals_per_year$x),ylab='',xlab='',ylim=c(0,(max(animals_per_year$x)+(0.1*max(animals_per_year$x)))))#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+		#dev.off()		#
+		#cat("\\includegraphics{", file, "}\n\n", sep="")#
+	}	#
+	mtext('Time (years)',1,line=2,outer=TRUE,font=2)#
+	mtext('Mean number of individuals per dive',2,line=2,outer=TRUE,font=2)
+Sweave('Supplementary_Material_Draft.Rnw')
+par (mfrow=c(6,1),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		boxplot(cocos[,j]~cocos[,9],pch='.',cex.axis=0.8,las=2,ylab='',xlab='',cex.lab=1.1)#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+}
+quartz()
+par (mfrow=c(6,1),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		boxplot(cocos[,j]~cocos[,9],pch='.',cex.axis=0.8,las=2,ylab='',xlab='',cex.lab=1.1)#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=2008,cex=0.8)#
+#
+}
+mtext(paste(names(cocos)[j]),side=3,line=-2,at=30,cex=0.8)
+par (mfrow=c(6,1),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		boxplot(cocos[,j]~cocos[,9],pch='.',cex.axis=0.8,las=2,ylab='',xlab='',cex.lab=1.1)#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=30,cex=0.8)#
+#
+}
+par (mfrow=c(6,1),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		boxplot(cocos[,j]~cocos[,9],pch='.',cex.axis=0.8,las=2,ylab='',xlab='',cex.lab=1.1)#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=30,cex=0.8)#
+#
+	}#
+	mtext('Divemaster ID',1,line=2,outer=TRUE,font=2)#
+	mtext('Number of individuals per dive',2,line=2,outer=TRUE,font=2)
+quartz()
+par (mfrow=c(6,1),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+		boxplot(cocos[,j]~cocos[,9],pch='.',cex.axis=0.8,las=2,ylab='',xlab='',cex.lab=1.1)#
+		mtext(paste(names(cocos)[j]),side=3,line=-2,at=30,cex=0.8)#
+#
+	}#
+	mtext('Divemaster ID',1,line=2,outer=TRUE,font=2)#
+	mtext('Number of individuals per dive',2,line=2,outer=TRUE,font=2)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+dives_per_site=table(cocos$SiteCode,cocos$StudyYear)#
+	rownames(dives_per_site)=101:118#
+	colnames(dives_per_site)=1992:2013#
+	plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')#
+	for (j in 2:nrow(dives_per_site)){#
+		points(colnames(dives_per_site),dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=rainbow(x)[j]#
+,type='l')#
+	}
+rainbow(10)
+dives_per_site=table(cocos$SiteCode,cocos$StudyYear)
+dives_per_site
+dives_per_site=table(cocos$SiteCode,cocos$StudyYear)#
+	rownames(dives_per_site)=101:118#
+	colnames(dives_per_site)=1992:2013#
+	plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')#
+	for (j in 2:nrow(dives_per_site)){#
+		points(colnames(dives_per_site),dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=rainbow(nrow(dives_per_site))[j]#
+,type='l')#
+	}
+quartz()
+dives_per_site=table(cocos$SiteCode,cocos$StudyYear)#
+	rownames(dives_per_site)=101:118#
+	colnames(dives_per_site)=1992:2013#
+	plot(colnames(dives_per_site),dives_per_site[1,]/dives_per_year$Freq,ylim=c(0,0.5),col=1,type='l',ylab='Fraction of dives at each site per year',xlab='Time (years)')#
+	for (j in 2:nrow(dives_per_site)){#
+		points(colnames(dives_per_site),dives_per_site[j,]/dives_per_year$Freq,ylim=c(0,0.5),col=rainbow(nrow(dives_per_site))[j]#
+,type='l')#
+	}
+Sweave('Supplementary_Material_Draft.Rnw')
+colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')#
+	par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+		#mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)#
+		#mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)#
+		#mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)#
+#
+}
+quartz()
+colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')#
+	par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+		#mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)#
+		#mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)#
+		#mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)#
+#
+}
+colnames(cocos)[10:15]=c('scalloped hammerhead','whitetip reef','marble ray','eagle ray','manta ray','mobula ray')#
+	par (mfrow=c(3,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+		#mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)#
+		#mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)#
+		#mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)#
+#
+}
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+		#mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)#
+		#mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)#
+		#mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)#
+#
+}
+quartz()
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+		#mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)#
+		#mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)#
+		#mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)#
+#
+}
+mtext("Frequency",side=2,line=3,cex=1,outer=TRUE)
+mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE)
+mtext("Frequency",side=2,line=2,cex=1,outer=TRUE)
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+         mtext(names(cocos[j]),side=3,line=1,cex=1,outer=TRUE)#
+	}#
+		mtext("Frequency",side=2,line=2,cex=1,outer=TRUE,font=2)#
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE,font=2)
+mtext(names(cocos[j]),side=3,line=-2,cex=1,outer=TRUE)
+mtext(names(cocos[j]),side=3,line=-2,cex=1)
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+         mtext(names(cocos[j]),side=3,line=-2,cex=0.8)#
+	}#
+		mtext("Frequency",side=2,line=2,cex=1,outer=TRUE,font=2)#
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE,font=2)
+mtext(names(cocos[j]),side=2,line=1,cex=0.8)
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+        mtext(names(cocos[j]),side=2,line=1,cex=0.8)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+	}#
+		mtext("Frequency",side=2,line=2,cex=1,outer=TRUE,font=2)#
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE,font=2)
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+        mtext(names(cocos[j]),side=2,line=1,cex=0.8)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+	}#
+		mtext("Frequency",side=2,line=2,cex=1,outer=TRUE,font=2)#
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE,font=2)
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+        mtext(names(cocos[j]),side=2,line=2,cex=0.8)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+	}#
+		mtext("Frequency",side=2,line=2,cex=1,outer=TRUE,font=2)#
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE,font=2)
+par (mfrow=c(6,3),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+	for (j in 10:15){#
+	if (max(cocos[,j],na.rm=T)>100){#
+		breaks_at=10#
+	}else{#
+		breaks_at=1	#
+	}#
+#
+	#par(mfrow=c(1,3),mai = c(0.1, 0.1, 0.1, 0.1),oma=c(5,5,3,0))#
+#
+    	#histogram of all data#
+		aaa=hist(cocos[,j],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(aaa,ylim=c(0,(max(aaa$counts,na.rm=T)+0.2*max(aaa$counts,na.rm=T))),ylab='',xlab='',main='')#
+        mtext("All data",cex=0.75,line=-1)#
+        mtext(names(cocos[j]),side=2,line=2,cex=0.4)#
+    	#histogram of all data#
+		bbb=hist(cocos[,j][cocos[,j]>0],breaks=seq(0,(max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+   		plot(bbb,ylim=c(0,(max(bbb$counts,na.rm=T)+0.2*max(bbb$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros removed",cex=0.75,line=-1)#
+    	#histogram of all data#
+		ccc=hist(cocos[,j][cocos[,j]>0 & cocos[,j]<(0.5*max(cocos[,j],na.rm=T))],breaks=seq(0,(0.5*max(cocos[,j],na.rm=T))+breaks_at,by=breaks_at),plot=F)#
+    	plot(ccc,ylim=c(0,(max(ccc$counts,na.rm=T)+0.2*max(ccc$counts,na.rm=T))),ylab='',xlab='',main='')#
+         mtext("Zeros and Highs Removed",cex=0.75,line=-1)#
+	}#
+		mtext("Frequency",side=2,line=2,cex=1,outer=TRUE,font=2)#
+		mtext("Number observed each dive",side=1,line=3,cex=1,outer=TRUE,font=2)
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
+Sweave('Supplementary_Material_Draft.Rnw')
 head(cocos)
+hist(cocos$CurrentCode,ylab='Frequency',xlab='Current Strength')
+barplot(cocos$CurrentCode,ylab='Frequency',xlab='Current Strength')
 table(cocos$CurrentCode)
-head(main)
-table(main$CurrentCode)
-str(main$CurrentCode)
-table(main$SeaCondCode)
-table(main$WeatherCode)
-main$TimeCode[1:100]
-main$TimeCode[1:1000]
-main$TimeCode[1:10000]
-head(main)
-main$Year[1:3000]
-head(main)
-table(cocos$SiteCode)
-table(cocos$Site)
-table(main$SiteCode)
-table(main$Site)
+barplot(table(cocos$CurrentCode))
+quartz()
+barplot(table(cocos$CurrentCode))
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength'))
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength')
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,15000))
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000))
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=2)
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)
+hist(cocos$SeaTempF)
+hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1)
+hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,6500),las=1)
+hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1)
+hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,4000),las=1)
+hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,10000),las=1)
+hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1)
+hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main=F)
+par (mfrow=c(2,2),oma=c(5,4,0,0)+0.1,mar=c(1,1,1,1)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+par (mfrow=c(2,2),oma=c(5,4,0,0)+0.1,mar=c(2,2,2,2)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+par (mfrow=c(2,2),oma=c(5,4,0,0)+0.1,mar=c(2,2,2,2)+2.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+par (mfrow=c(2,2),oma=c(5,4,0,0)+0.1,mar=c(4,2,2,2)+0.1)
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+par (mfrow=c(2,2),oma=c(2,4,0,0)+0.1,mar=c(4,2,2,2)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+par (mfrow=c(2,2),oma=c(2,4,0,0)+0.1,mar=c(3,2,2,2)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+par (mfrow=c(2,2),oma=c(2,4,0,0)+0.1,mar=c(3.5,2,2,2)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+par (mfrow=c(2,2),oma=c(2,4,0,0)+0.1,mar=c(4,2,2,2)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white')
+hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')
+help(barplot)
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white',space=0)
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white',space=0)
+par (mfrow=c(2,2),oma=c(2,4,0,0)+0.1,mar=c(4,2,2,2)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white',space=0)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='')#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='')#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='')
+mtext('Frequency',2,line=2,outer=TRUE,font=2)
+hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='',font=2)
+hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='',font=2)
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white',space=0,font=2)
+barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white',space=0,font=2)
+par (mfrow=c(2,2),oma=c(2,4,0,0)+0.1,mar=c(4,2,2,2)+0.1)#
+#
+	barplot(table(cocos$CurrentCode),ylab='Frequency',xlab='Current Strength',ylim=c(0,12000),las=1,col='white',space=0,font=2)#
+#
+	hist(cocos$SeaTempF,ylab='Frequency',xlab='Sea Temperature (F)',ylim=c(0,6500),las=1,main='',font=2)#
+	hist(cocos$VisibilityFt,ylab='Frequency',xlab='Visibility (ft)',ylim=c(0,4000),las=1,main='',font=2)#
+	hist(cocos$ElNinoIndex,ylab='Frequency',xlab='El Nino Index',ylim=c(0,5000),las=1,main='',font=2)#
+#
+	mtext('Frequency',2,line=2,outer=TRUE,font=2)
+Sweave('Supplementary_Material_Draft.Rnw')
