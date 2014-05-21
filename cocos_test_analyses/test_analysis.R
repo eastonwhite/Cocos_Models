@@ -69,6 +69,12 @@ cocos$COS_TIME=cos(2*pi*cocos$StudyJulianDate/365.25)
 
 ###################################################
 #Convert "other species to presence-absence
+cocos$Silky[cocos$Silky!=0]=1
+cocos$Silvertip[cocos$Silvertip!=0]=1
+cocos$Blacktip[cocos$Blacktip!=0]=1
+cocos$Galapagos[cocos$Galapagos!=0]=1
+cocos$WhaleShark[cocos$WhaleShark!=0]=1
+cocos$Tiger[cocos$Tiger!=0]=1
 
 
 
